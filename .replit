@@ -30,3 +30,9 @@ externalPort = 80
 [[ports]]
 localPort = 22827
 externalPort = 3000
+
+[userenv]
+
+[userenv.shared]
+VPS_PASSWORD = "silentwolf906."
+VPS_IP = "194.60.87.11"

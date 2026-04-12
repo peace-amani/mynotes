@@ -63,6 +63,13 @@ export default function Home() {
       description: "Government spending, taxation, and budget management.",
       status: "Upcoming",
       href: "#"
+    },
+    {
+      id: 5,
+      title: "Classical & Keynesian Theories",
+      description: "Say's Law, consumption function, MPC, APC, APS, the multiplier, equilibrium income, and 20 worked examples.",
+      status: "Available",
+      href: "/economics/5"
     }
   ];
 
