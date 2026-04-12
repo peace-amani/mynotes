@@ -46,9 +46,9 @@ export default function Home() {
     {
       id: 2,
       title: "National Income",
-      description: "GDP, GNP, NNP, measurement methods and their significance.",
-      status: "Upcoming",
-      href: "#"
+      description: "GDP, GNP, NNP, measurement methods, per capita income, and 20 worked examples.",
+      status: "Available",
+      href: "/economics/2"
     },
     {
       id: 3,
