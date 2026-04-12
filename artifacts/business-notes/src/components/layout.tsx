@@ -14,17 +14,17 @@ export function Layout({ children, breadcrumbs }: LayoutProps) {
   const [location] = useLocation();
 
   const unit1Topics = [
-    { id: 1, title: "Introduction to Management" },
-    { id: 2, title: "Evolution of Management Thought" },
-    { id: 3, title: "Planning" },
-    { id: 4, title: "Organizing" },
+    { id: 1, title: "Introduction to Management", available: true },
+    { id: 2, title: "Evolution of Management Thought", available: false },
+    { id: 3, title: "Planning", available: false },
+    { id: 4, title: "Organizing", available: false },
   ];
 
   const unit2Topics = [
-    { id: 1, title: "Introduction to Macroeconomics" },
-    { id: 2, title: "National Income" },
-    { id: 3, title: "Money and Banking" },
-    { id: 4, title: "Fiscal Policy" },
+    { id: 1, title: "Introduction to Macroeconomics", available: true },
+    { id: 2, title: "National Income", available: true },
+    { id: 3, title: "Money and Banking", available: false },
+    { id: 4, title: "Fiscal Policy", available: false },
   ];
 
   return (
@@ -50,6 +50,18 @@ export function Layout({ children, breadcrumbs }: LayoutProps) {
           <nav className="space-y-1 px-2 mb-6">
             {unit1Topics.map((topic) => {
               const isActive = location === `/topic/${topic.id}`;
+              if (!topic.available) {
+                return (
+                  <div
+                    key={topic.id}
+                    className="flex items-center gap-3 rounded-md px-3 py-2 text-sm opacity-40 cursor-not-allowed"
+                    title="Coming soon"
+                  >
+                    <BookOpen className="h-4 w-4 shrink-0" />
+                    <span className="truncate">Topic {topic.id}: {topic.title}</span>
+                  </div>
+                );
+              }
               return (
                 <Link
                   key={topic.id}
@@ -79,6 +91,18 @@ export function Layout({ children, breadcrumbs }: LayoutProps) {
           <nav className="space-y-1 px-2">
             {unit2Topics.map((topic) => {
               const isActive = location === `/economics/${topic.id}`;
+              if (!topic.available) {
+                return (
+                  <div
+                    key={topic.id}
+                    className="flex items-center gap-3 rounded-md px-3 py-2 text-sm opacity-40 cursor-not-allowed"
+                    title="Coming soon"
+                  >
+                    <TrendingUp className="h-4 w-4 shrink-0" />
+                    <span className="truncate">Week {topic.id}: {topic.title}</span>
+                  </div>
+                );
+              }
               return (
                 <Link
                   key={topic.id}
