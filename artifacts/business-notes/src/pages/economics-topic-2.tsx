@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { useState, useEffect, useRef } from "react";
 import { Layout } from "@/components/layout";
 import { Card, CardContent } from "@/components/ui/card";
@@ -137,6 +138,16 @@ export default function EconomicsTopic2() {
         { label: "Week 2: National Income Analysis" },
       ]}
     >
+      <Helmet>
+        <title>National Income Analysis — Economics Week 2 | Study Notes</title>
+        <meta name="description" content="GDP, GNP, NNP, circular flow, three measurement approaches, real vs nominal income and 20 worked examples." />
+        <meta property="og:title" content="National Income Analysis — Unit 2 Economics Week 2" />
+        <meta property="og:description" content="GDP, GNP, NNP, measurement approaches, real vs nominal income. Fully worked calculations with 20 examples." />
+        <meta property="og:image" content="https://notes.xwolf.space/og-eco-week2.svg" />
+        <meta property="og:url" content="https://notes.xwolf.space/economics/2" />
+        <meta name="twitter:title" content="National Income Analysis | Study Notes" />
+        <meta name="twitter:image" content="https://notes.xwolf.space/og-eco-week2.svg" />
+      </Helmet>
       {/* Reading progress bar */}
       <div className="fixed top-14 left-0 md:left-64 right-0 h-0.5 bg-primary/20 z-10" data-testid="progress-bar">
         <div className="h-full bg-primary transition-all duration-150" style={{ width: `${readProgress}%` }} />

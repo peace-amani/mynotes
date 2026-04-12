@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { useState, useEffect, useRef } from "react";
 import { Layout } from "@/components/layout";
 import { ArrowUp, Info, Lightbulb, AlertTriangle, CheckCircle2, Calculator } from "lucide-react";
@@ -131,6 +132,16 @@ export default function EconomicsTopic5() {
       { label: "Unit 2", href: "/unit/2" },
       { label: "Week 5: Classical & Keynesian Theories" },
     ]}>
+      <Helmet>
+        <title>Classical &amp; Keynesian Theories — Economics Week 5 | Study Notes</title>
+        <meta name="description" content="Say's Law, consumption function, MPC, MPS, APC, APS, investment multiplier, equilibrium income and 20 worked examples." />
+        <meta property="og:title" content="Classical &amp; Keynesian Theories — Unit 2 Economics Week 5" />
+        <meta property="og:description" content="Say's Law, consumption function, MPC/APC, multiplier and equilibrium income. 20 fully worked calculations." />
+        <meta property="og:image" content="https://notes.xwolf.space/og-eco-week5.svg" />
+        <meta property="og:url" content="https://notes.xwolf.space/economics/5" />
+        <meta name="twitter:title" content="Classical &amp; Keynesian Theories | Study Notes" />
+        <meta name="twitter:image" content="https://notes.xwolf.space/og-eco-week5.svg" />
+      </Helmet>
       {/* Reading progress bar */}
       <div className="fixed top-14 left-0 md:left-64 right-0 h-0.5 bg-primary/20 z-10">
         <div className="h-full bg-primary transition-all duration-150" style={{ width: `${readProgress}%` }} />

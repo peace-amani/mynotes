@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { useState, useEffect, useRef } from "react";
 import { Link } from "wouter";
 import { Layout } from "@/components/layout";
@@ -108,6 +109,16 @@ export default function EconomicsTopic1() {
         { label: "Week 1: Introduction to Macroeconomics" },
       ]}
     >
+      <Helmet>
+        <title>Introduction to Macroeconomics — Economics Week 1 | Study Notes</title>
+        <meta name="description" content="Basic macroeconomic concepts, objectives, scope and key indicators. Unit 2 Economics Week 1 study notes with worked examples." />
+        <meta property="og:title" content="Introduction to Macroeconomics — Unit 2 Economics" />
+        <meta property="og:description" content="Basic macroeconomic concepts, objectives, scope and key indicators. Richly explained with real-world examples." />
+        <meta property="og:image" content="https://notes.xwolf.space/og-eco-week1.svg" />
+        <meta property="og:url" content="https://notes.xwolf.space/economics/1" />
+        <meta name="twitter:title" content="Introduction to Macroeconomics | Study Notes" />
+        <meta name="twitter:image" content="https://notes.xwolf.space/og-eco-week1.svg" />
+      </Helmet>
       {/* Reading progress bar */}
       <div
         className="fixed top-14 left-0 md:left-64 right-0 h-0.5 bg-primary/20 z-10"

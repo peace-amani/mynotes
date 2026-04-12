@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { useEffect, useState } from "react";
 import { Layout } from "@/components/layout";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -51,12 +52,21 @@ export default function Topic1() {
   const progress = ((sections.findIndex(s => s.id === activeSection) + 1) / sections.length) * 100;
 
   return (
-    <Layout 
-      breadcrumbs={[
+    <Layout breadcrumbs={[
         { label: "Unit 1", href: "/" },
         { label: "Topic 1: Introduction to Management" }
       ]}
     >
+      <Helmet>
+        <title>Introduction to Management — Business Management | Study Notes</title>
+        <meta name="description" content="Definition, characteristics, functions, levels and roles of management. Business Management Topic 1 study notes with examples." />
+        <meta property="og:title" content="Introduction to Management — Unit 1 Business Management" />
+        <meta property="og:description" content="Definition, characteristics, functions, levels and roles of management. Richly explained with real-world examples." />
+        <meta property="og:image" content="https://notes.xwolf.space/og-bm-topic1.svg" />
+        <meta property="og:url" content="https://notes.xwolf.space/topic/1" />
+        <meta name="twitter:title" content="Introduction to Management | Study Notes" />
+        <meta name="twitter:image" content="https://notes.xwolf.space/og-bm-topic1.svg" />
+      </Helmet>
       {/* Reading Progress Bar */}
       <div className="sticky top-14 z-20 w-full h-1 bg-muted">
         <div 

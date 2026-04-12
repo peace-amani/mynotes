@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { Link } from "wouter";
 import { Layout } from "@/components/layout";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -75,6 +76,16 @@ export default function Home() {
 
   return (
     <Layout breadcrumbs={[{ label: "Course Overview" }]}>
+      <Helmet>
+        <title>Study Notes — Business Management &amp; Economics</title>
+        <meta name="description" content="Interactive, richly explained study notes for Business Management and Economics. Covers theory, real-world examples and fully worked calculations." />
+        <meta property="og:title" content="Study Notes — Business Management &amp; Economics" />
+        <meta property="og:description" content="Interactive, richly explained study notes for Business Management and Economics." />
+        <meta property="og:image" content="https://notes.xwolf.space/og-home.svg" />
+        <meta property="og:url" content="https://notes.xwolf.space/" />
+        <meta name="twitter:title" content="Study Notes — Business Management &amp; Economics" />
+        <meta name="twitter:image" content="https://notes.xwolf.space/og-home.svg" />
+      </Helmet>
       <div className="container mx-auto max-w-5xl px-4 py-12 md:py-16 space-y-16">
 
         {/* Unit 1 */}

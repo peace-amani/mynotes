@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0b1a3e"/>
+      <stop offset="100%" stop-color="#0f2044"/>
+    </linearGradient>
+    <linearGradient id="side" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#60a5fa"/>
+      <stop offset="100%" stop-color="#60a5facc"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- Decorative dots grid -->
+  <circle cx="80" cy="60" r="1.5" fill="#ffffff" opacity="0.06"/><circle cx="80" cy="140" r="1.5" fill="#ffffff" opacity="0.06"/><circle cx="80" cy="220" r="1.5" fill="#ffffff" opacity="0.06"/><circle cx="80" cy="300" r="1.5" fill="#ffffff" opacity="0.06"/><circle cx="80" cy="380" r="1.5" fill="#ffffff" opacity="0.06"/><circle cx="80" cy="460" r="1.5" fill="#ffffff" opacity="0.06"/><circle cx="80" cy="540" r="1.5" fill="#ffffff" opacity="0.06"/><circle cx="80" cy="620" r="1.5" fill="#ffffff" opacity="0.06"/><circle cx="175" cy="60" r="1.5" fill="#ffffff" opacity="0.06"/><circle cx="175" cy="140" r="1.5" fill="#ffffff" opacity="0.06"/><circle cx="175" cy="220" r="1.5" fill="#ffffff" opacity="0.06"/><circle cx="175" cy="300" r="1.5" fill="#ffffff" opacity="0.06"/><circle cx="175" cy="380" r="1.5" fill="#ffffff" opacity="0.06"/><circle cx="175" cy="460" r="1.5" fill="#ffffff" opacity="0.06"/><circle cx="175" cy="540" r="1.5" fill="#ffffff" opacity="0.06"/><circle cx="175" cy="620" r="1.5" fill="#ffffff" opacity="0.06"/><circle cx="270" cy="60" r="1.5" fill="#ffffff" opacity="0.06"/><circle cx="270" cy="140" r="1.5" fill="#ffffff" opacity="0.06"/><circle cx="270" cy="220" r="1.5" fill="#ffffff" opacity="0.06"/><circle cx="270" cy="300" r="1.5" fill="#ffffff" opacity="0.06"/><circle cx="270" cy="380" r="1.5" fill="#ffffff" opacity="0.06"/><circle cx="270" cy="460" r="1.5" fill="#ffffff" opacity="0.06"/><circle cx="270" cy="540" r="1.5" fill="#ffffff" opacity="0.06"/><circle cx="270" cy="620" r="1.5" fill="#ffffff" opacity="0.06"/><circle cx="365" cy="60" r="1.5" fill="#ffffff" opacity="0.06"/><circle cx="365" cy="140" r="1.5" fill="#ffffff" opacity="0.06"/><circle cx="365" cy="220" r="1.5" fill="#ffffff" opacity="0.06"/><circle cx="365" cy="300" r="1.5" fill="#ffffff" opacity="0.06"/><circle cx="365" cy="380" r="1.5" fill="#ffffff" opacity="0.06"/><circle cx="365" cy="460" r="1.5" fill="#ffffff" opacity="0.06"/><circle cx="365" cy="540" r="1.5" fill="#ffffff" opacity="0.06"/><circle cx="365" cy="620" r="1.5" fill="#ffffff" opacity="0.06"/><circle cx="460" cy="60" r="1.5" fill="#ffffff" opacity="0.06"/><circle cx="460" cy="140" r="1.5" fill="#ffffff" opacity="0.06"/><circle cx="460" cy="220" r="1.5" fill="#ffffff" opacity="0.06"/><circle cx="460" cy="300" r="1.5" fill="#ffffff" opacity="0.06"/><circle cx="460" cy="380" r="1.5" fill="#ffffff" opacity="0.06"/><circle cx="460" cy="460" r="1.5" fill="#ffffff" opacity="0.06"/><circle cx="460" cy="540" r="1.5" fill="#ffffff" opacity="0.06"/><circle cx="460" cy="620" r="1.5" fill="#ffffff" opacity="0.06"/><circle cx="555" cy="60" r="1.5" fill="#ffffff" opacity="0.06"/><circle cx="555" cy="140" r="1.5" fill="#ffffff" opacity="0.06"/><circle cx="555" cy="220" r="1.5" fill="#ffffff" opacity="0.06"/><circle cx="555" cy="300" r="1.5" fill="#ffffff" opacity="0.06"/><circle cx="555" cy="380" r="1.5" fill="#ffffff" opacity="0.06"/><circle cx="555" cy="460" r="1.5" fill="#ffffff" opacity="0.06"/><circle cx="555" cy="540" r="1.5" fill="#ffffff" opacity="0.06"/><circle cx="555" cy="620" r="1.5" fill="#ffffff" opacity="0.06"/><circle cx="650" cy="60" r="1.5" fill="#ffffff" opacity="0.06"/><circle cx="650" cy="140" r="1.5" fill="#ffffff" opacity="0.06"/><circle cx="650" cy="220" r="1.5" fill="#ffffff" opacity="0.06"/><circle cx="650" cy="300" r="1.5" fill="#ffffff" opacity="0.06"/><circle cx="650" cy="380" r="1.5" fill="#ffffff" opacity="0.06"/><circle cx="650" cy="460" r="1.5" fill="#ffffff" opacity="0.06"/><circle cx="650" cy="540" r="1.5" fill="#ffffff" opacity="0.06"/><circle cx="650" cy="620" r="1.5" fill="#ffffff" opacity="0.06"/><circle cx="745" cy="60" r="1.5" fill="#ffffff" opacity="0.06"/><circle cx="745" cy="140" r="1.5" fill="#ffffff" opacity="0.06"/><circle cx="745" cy="220" r="1.5" fill="#ffffff" opacity="0.06"/><circle cx="745" cy="300" r="1.5" fill="#ffffff" opacity="0.06"/><circle cx="745" cy="380" r="1.5" fill="#ffffff" opacity="0.06"/><circle cx="745" cy="460" r="1.5" fill="#ffffff" opacity="0.06"/><circle cx="745" cy="540" r="1.5" fill="#ffffff" opacity="0.06"/><circle cx="745" cy="620" r="1.5" fill="#ffffff" opacity="0.06"/><circle cx="840" cy="60" r="1.5" fill="#ffffff" opacity="0.06"/><circle cx="840" cy="140" r="1.5" fill="#ffffff" opacity="0.06"/><circle cx="840" cy="220" r="1.5" fill="#ffffff" opacity="0.06"/><circle cx="840" cy="300" r="1.5" fill="#ffffff" opacity="0.06"/><circle cx="840" cy="380" r="1.5" fill="#ffffff" opacity="0.06"/><circle cx="840" cy="460" r="1.5" fill="#ffffff" opacity="0.06"/><circle cx="840" cy="540" r="1.5" fill="#ffffff" opacity="0.06"/><circle cx="840" cy="620" r="1.5" fill="#ffffff" opacity="0.06"/><circle cx="935" cy="60" r="1.5" fill="#ffffff" opacity="0.06"/><circle cx="935" cy="140" r="1.5" fill="#ffffff" opacity="0.06"/><circle cx="935" cy="220" r="1.5" fill="#ffffff" opacity="0.06"/><circle cx="935" cy="300" r="1.5" fill="#ffffff" opacity="0.06"/><circle cx="935" cy="380" r="1.5" fill="#ffffff" opacity="0.06"/><circle cx="935" cy="460" r="1.5" fill="#ffffff" opacity="0.06"/><circle cx="935" cy="540" r="1.5" fill="#ffffff" opacity="0.06"/><circle cx="935" cy="620" r="1.5" fill="#ffffff" opacity="0.06"/><circle cx="1030" cy="60" r="1.5" fill="#ffffff" opacity="0.06"/><circle cx="1030" cy="140" r="1.5" fill="#ffffff" opacity="0.06"/><circle cx="1030" cy="220" r="1.5" fill="#ffffff" opacity="0.06"/><circle cx="1030" cy="300" r="1.5" fill="#ffffff" opacity="0.06"/><circle cx="1030" cy="380" r="1.5" fill="#ffffff" opacity="0.06"/><circle cx="1030" cy="460" r="1.5" fill="#ffffff" opacity="0.06"/><circle cx="1030" cy="540" r="1.5" fill="#ffffff" opacity="0.06"/><circle cx="1030" cy="620" r="1.5" fill="#ffffff" opacity="0.06"/><circle cx="1125" cy="60" r="1.5" fill="#ffffff" opacity="0.06"/><circle cx="1125" cy="140" r="1.5" fill="#ffffff" opacity="0.06"/><circle cx="1125" cy="220" r="1.5" fill="#ffffff" opacity="0.06"/><circle cx="1125" cy="300" r="1.5" fill="#ffffff" opacity="0.06"/><circle cx="1125" cy="380" r="1.5" fill="#ffffff" opacity="0.06"/><circle cx="1125" cy="460" r="1.5" fill="#ffffff" opacity="0.06"/><circle cx="1125" cy="540" r="1.5" fill="#ffffff" opacity="0.06"/><circle cx="1125" cy="620" r="1.5" fill="#ffffff" opacity="0.06"/>
+
+  <!-- Left gold accent bar -->
+  <rect x="0" y="0" width="10" height="630" fill="url(#side)"/>
+
+  <!-- Right decorative panel -->
+  <rect x="900" y="0" width="300" height="630" fill="#ffffff" opacity="0.02"/>
+  <rect x="910" y="40" width="240" height="3" rx="1.5" fill="#60a5fa" opacity="0.4"/>
+  <rect x="910" y="587" width="240" height="3" rx="1.5" fill="#60a5fa" opacity="0.4"/>
+
+  <!-- Book icon cluster (right side) -->
+  <g transform="translate(1010, 200) rotate(-8)" opacity="0.18">
+    <rect x="0" y="0" width="80" height="110" rx="6" fill="#ffffff"/>
+    <rect x="0" y="0" width="10" height="110" rx="3" fill="#60a5fa"/>
+    <rect x="15" y="18" width="50" height="6" rx="3" fill="#0f2044"/>
+    <rect x="15" y="32" width="40" height="4" rx="2" fill="#0f2044" opacity="0.6"/>
+    <rect x="15" y="44" width="45" height="4" rx="2" fill="#0f2044" opacity="0.6"/>
+    <rect x="15" y="56" width="35" height="4" rx="2" fill="#0f2044" opacity="0.6"/>
+  </g>
+  <g transform="translate(1050, 230) rotate(5)" opacity="0.12">
+    <rect x="0" y="0" width="70" height="95" rx="5" fill="#ffffff"/>
+    <rect x="0" y="0" width="8" height="95" rx="3" fill="#60a5fa"/>
+  </g>
+
+  <!-- Branding top -->
+  <text x="52" y="72" font-family="Georgia,serif" font-size="18" font-weight="bold"
+        fill="#60a5fa" letter-spacing="3">STUDY NOTES</text>
+  <rect x="52" y="82" width="200" height="1.5" fill="#60a5fa" opacity="0.4"/>
+
+  <!-- Unit / badge -->
+  <rect x="52" y="104" width="325" height="34" rx="5" fill="#60a5fa" opacity="0.15"/>
+  <rect x="52" y="104" width="4" height="34" rx="2" fill="#60a5fa"/>
+  <text x="68" y="127" font-family="Georgia,serif" font-size="16" fill="#60a5fa" font-weight="bold">UNIT 2 — ECONOMICS · WEEK 2</text>
+
+  <!-- Main title -->
+  <text x="52" y="315" font-family="Georgia,serif" font-size="68"
+        font-weight="bold" fill="#f5f0e8" letter-spacing="-0.5">National Income Analysis</text>
+  
+
+  <!-- Subtitle -->
+  <text x="52" y="395"
+        font-family="Arial,sans-serif" font-size="24" fill="#9ab0cc">GDP, GNP, NNP and three measurement approaches</text>
+
+  <!-- Bottom bar -->
+  <rect x="0" y="580" width="1200" height="50" fill="#000000" opacity="0.25"/>
+  <text x="52" y="612" font-family="Arial,sans-serif" font-size="16" fill="#9ab0cc">notes.xwolf.space</text>
+  <text x="1148" y="612" font-family="Arial,sans-serif" font-size="16" fill="#60a5fa"
+        text-anchor="end">✦</text>
+</svg>
