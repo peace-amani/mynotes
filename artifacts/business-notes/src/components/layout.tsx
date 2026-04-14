@@ -23,7 +23,7 @@ export function Layout({ children, breadcrumbs }: LayoutProps) {
   const unit2Topics = [
     { id: 1, title: "Introduction to Macroeconomics", available: true },
     { id: 2, title: "National Income", available: true },
-    { id: 3, title: "Money and Banking", available: false },
+    { id: 3, title: "Money and Banking", available: true },
     { id: 4, title: "Fiscal Policy", available: false },
     { id: 5, title: "Classical & Keynesian Theories", available: true },
   ];

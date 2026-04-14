@@ -54,9 +54,9 @@ export default function Home() {
     {
       id: 3,
       title: "Money and Banking",
-      description: "Functions of money, commercial banking, and central banking.",
-      status: "Upcoming",
-      href: "#"
+      description: "Barter vs money, characteristics and functions of money, quantity theory (MV=PT), demand/supply of money, CBK functions, 6 monetary policy tools, and credit creation with worked examples.",
+      status: "Available",
+      href: "/economics/3"
     },
     {
       id: 4,
