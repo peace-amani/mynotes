@@ -75,62 +75,17 @@ export default function Home() {
   ];
 
   const unit3Topics = [
-    {
-      id: 1,
-      week: 1,
-      title: "Introduction to Sociology",
-      description: "Definition, nature and scope of sociology, sociology and other social sciences, importance, and development of sociology.",
-      status: "Upcoming",
-      href: "#"
-    },
-    {
-      id: 2,
-      week: 2,
-      title: "Society",
-      description: "Meaning and definitions of society, theories of origin (Divine, Force, Social Contract), 10 characteristics, and community vs. society.",
-      status: "Available",
-      href: "/society/2"
-    },
-    {
-      id: 3,
-      week: 3,
-      title: "Urban & Rural Community",
-      description: "Definitions, characteristics, problems of rural-urban migration, and environmental management.",
-      status: "Upcoming",
-      href: "#"
-    },
-    {
-      id: 4,
-      week: 4,
-      title: "Socialization",
-      description: "Daniella's story, definitions, factors (imitation, suggestion, identification, language), agencies, types, and characteristics.",
-      status: "Available",
-      href: "/society/4"
-    },
-    {
-      id: 5,
-      week: 5,
-      title: "Culture",
-      description: "E.B. Taylor's definition, 7 characteristics, and elements: symbols, language, values, norms, folkways, mores, and taboos.",
-      status: "Available",
-      href: "/society/5"
-    },
-    {
-      id: 6,
-      week: 6,
-      title: "Social Change",
-      description: "Meaning, characteristics, factors, social movements, modernity, westernization, and consequences of social change.",
-      status: "Upcoming",
-      href: "#"
-    },
-    {
-      id: 9,
-      week: 9,
-      title: "Social Processes",
-      description: "Competition, Conflict, Cooperation, Accommodation and Negotiation — meaning, characteristics, importance, and using each process to solve social problems.",
-      status: "Available",
-      href: "/society/9"
-    },
+    { id: 1, week: 1, title: "Introduction to Sociology", description: "Definition (Comte, Durkheim, Weber, Mills), nature and scope, relationship with other social sciences, importance, and founding figures.", status: "Available", href: "/society/1" },
+    { id: 2, week: 2, title: "Society", description: "Meaning and definitions of society, theories of origin (Divine, Force, Social Contract), 10 characteristics, and community vs. society.", status: "Available", href: "/society/2" },
+    { id: 3, week: 3, title: "Urban & Rural Community", description: "Characteristics of rural vs urban, push/pull factors of migration, problems of rural-urban migration, and environmental management.", status: "Available", href: "/society/3" },
+    { id: 4, week: 4, title: "Socialization", description: "Daniella's story, definitions, factors (imitation, suggestion, identification, language), agencies, types, and characteristics.", status: "Available", href: "/society/4" },
+    { id: 5, week: 5, title: "Culture", description: "E.B. Taylor's definition, 7 characteristics, and elements: symbols, language, values, norms, folkways, mores, and taboos.", status: "Available", href: "/society/5" },
+    { id: 6, week: 6, title: "Social Change", description: "Meaning, characteristics, traditional vs modernity vs westernisation, factors, social movements, themes of change, and consequences.", status: "Available", href: "/society/6" },
+    { id: 8, week: 8, title: "Leadership & Group Dynamics", description: "Attitude formation and change, leadership theories and styles (autocratic, democratic, transformational), and Tuckman's 5 group stages.", status: "Available", href: "/society/8" },
+    { id: 9, week: 9, title: "Social Processes", description: "Competition, Conflict, Cooperation, Accommodation and Negotiation — meaning, characteristics, importance, and using each to solve social problems.", status: "Available", href: "/society/9" },
+    { id: 10, week: 10, title: "Human Rights", description: "Individual rights, citizen rights, sex vs gender concept, types of gender-based violence, and gender mainstreaming strategies.", status: "Available", href: "/society/10" },
+    { id: 11, week: 11, title: "Civil Education", description: "Kenya's 3 arms of government, devolution (national vs county), constitutionalism, and the history of constitution-making in Kenya.", status: "Available", href: "/society/11" },
+    { id: 12, week: 12, title: "Emerging Issues", description: "Corruption, marriage and its challenges, individual and workplace stress, alcohol abuse, and suicide — causes, effects, and responses.", status: "Available", href: "/society/12" },
   ];
 
   return (

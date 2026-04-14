@@ -29,13 +29,17 @@ export function Layout({ children, breadcrumbs }: LayoutProps) {
   ];
 
   const unit3Topics = [
-    { id: 1, title: "Introduction to Sociology", available: false },
+    { id: 1, title: "Introduction to Sociology", available: true },
     { id: 2, title: "Society", available: true },
-    { id: 3, title: "Urban & Rural Community", available: false },
+    { id: 3, title: "Urban & Rural Community", available: true },
     { id: 4, title: "Socialization", available: true },
     { id: 5, title: "Culture", available: true },
-    { id: 6, title: "Social Change", available: false },
+    { id: 6, title: "Social Change", available: true },
+    { id: 8, title: "Leadership & Group Dynamics", available: true },
     { id: 9, title: "Social Processes", available: true },
+    { id: 10, title: "Human Rights", available: true },
+    { id: 11, title: "Civil Education", available: true },
+    { id: 12, title: "Emerging Issues", available: true },
   ];
 
   return (
