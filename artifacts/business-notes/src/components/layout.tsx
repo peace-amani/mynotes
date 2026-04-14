@@ -1,5 +1,5 @@
 import { Link, useLocation } from "wouter";
-import { BookOpen, ChevronRight, Moon, Sun, Library, TrendingUp } from "lucide-react";
+import { BookOpen, ChevronRight, Moon, Sun, Library, TrendingUp, Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useTheme } from "@/components/theme-provider";
 import { ScrollArea } from "@/components/ui/scroll-area";
@@ -26,6 +26,15 @@ export function Layout({ children, breadcrumbs }: LayoutProps) {
     { id: 3, title: "Money and Banking", available: false },
     { id: 4, title: "Fiscal Policy", available: false },
     { id: 5, title: "Classical & Keynesian Theories", available: true },
+  ];
+
+  const unit3Topics = [
+    { id: 1, title: "Introduction to Sociology", available: false },
+    { id: 2, title: "Society", available: true },
+    { id: 3, title: "Urban & Rural Community", available: false },
+    { id: 4, title: "Socialization", available: true },
+    { id: 5, title: "Culture", available: true },
+    { id: 6, title: "Social Change", available: false },
   ];
 
   return (
@@ -89,7 +98,7 @@ export function Layout({ children, breadcrumbs }: LayoutProps) {
               </h2>
             </Link>
           </div>
-          <nav className="space-y-1 px-2">
+          <nav className="space-y-1 px-2 mb-6">
             {unit2Topics.map((topic) => {
               const isActive = location === `/economics/${topic.id}`;
               if (!topic.available) {
@@ -116,6 +125,47 @@ export function Layout({ children, breadcrumbs }: LayoutProps) {
                   data-testid={`nav-unit2-topic-${topic.id}`}
                 >
                   <TrendingUp className="h-4 w-4 shrink-0" />
+                  <span className="truncate">Week {topic.id}: {topic.title}</span>
+                </Link>
+              );
+            })}
+          </nav>
+
+          {/* Unit 3 */}
+          <div className="px-4 mb-2">
+            <Link href="/">
+              <h2 className="text-xs font-bold tracking-wider text-muted-foreground uppercase hover:text-foreground transition-colors">
+                Unit 3 — Society &amp; Culture
+              </h2>
+            </Link>
+          </div>
+          <nav className="space-y-1 px-2">
+            {unit3Topics.map((topic) => {
+              const isActive = location === `/society/${topic.id}`;
+              if (!topic.available) {
+                return (
+                  <div
+                    key={topic.id}
+                    className="flex items-center gap-3 rounded-md px-3 py-2 text-sm opacity-40 cursor-not-allowed"
+                    title="Coming soon"
+                  >
+                    <Globe className="h-4 w-4 shrink-0" />
+                    <span className="truncate">Week {topic.id}: {topic.title}</span>
+                  </div>
+                );
+              }
+              return (
+                <Link
+                  key={topic.id}
+                  href={`/society/${topic.id}`}
+                  className={`flex items-center gap-3 rounded-md px-3 py-2 text-sm transition-colors ${
+                    isActive
+                      ? "bg-sidebar-accent text-sidebar-accent-foreground font-medium"
+                      : "text-sidebar-foreground/70 hover:bg-sidebar-accent/50 hover:text-sidebar-foreground"
+                  }`}
+                  data-testid={`nav-unit3-topic-${topic.id}`}
+                >
+                  <Globe className="h-4 w-4 shrink-0" />
                   <span className="truncate">Week {topic.id}: {topic.title}</span>
                 </Link>
               );

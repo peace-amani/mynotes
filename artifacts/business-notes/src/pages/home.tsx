@@ -2,7 +2,7 @@ import { Helmet } from "react-helmet-async";
 import { Link } from "wouter";
 import { Layout } from "@/components/layout";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { BookOpen, TrendingUp } from "lucide-react";
+import { BookOpen, TrendingUp, Globe } from "lucide-react";
 
 export default function Home() {
   const unit1Topics = [
@@ -74,13 +74,64 @@ export default function Home() {
     }
   ];
 
+  const unit3Topics = [
+    {
+      id: 1,
+      week: 1,
+      title: "Introduction to Sociology",
+      description: "Definition, nature and scope of sociology, sociology and other social sciences, importance, and development of sociology.",
+      status: "Upcoming",
+      href: "#"
+    },
+    {
+      id: 2,
+      week: 2,
+      title: "Society",
+      description: "Meaning and definitions of society, theories of origin (Divine, Force, Social Contract), 10 characteristics, and community vs. society.",
+      status: "Available",
+      href: "/society/2"
+    },
+    {
+      id: 3,
+      week: 3,
+      title: "Urban & Rural Community",
+      description: "Definitions, characteristics, problems of rural-urban migration, and environmental management.",
+      status: "Upcoming",
+      href: "#"
+    },
+    {
+      id: 4,
+      week: 4,
+      title: "Socialization",
+      description: "Daniella's story, definitions, factors (imitation, suggestion, identification, language), agencies, types, and characteristics.",
+      status: "Available",
+      href: "/society/4"
+    },
+    {
+      id: 5,
+      week: 5,
+      title: "Culture",
+      description: "E.B. Taylor's definition, 7 characteristics, and elements: symbols, language, values, norms, folkways, mores, and taboos.",
+      status: "Available",
+      href: "/society/5"
+    },
+    {
+      id: 6,
+      week: 6,
+      title: "Social Change",
+      description: "Meaning, characteristics, factors, social movements, modernity, westernization, and consequences of social change.",
+      status: "Upcoming",
+      href: "#"
+    },
+  ];
+
   return (
     <Layout breadcrumbs={[{ label: "Course Overview" }]}>
       <Helmet>
-        <title>Study Notes — Business Management &amp; Economics</title>
-        <meta name="description" content="Interactive, richly explained study notes for Business Management and Economics. Covers theory, real-world examples and fully worked calculations." />
-        <meta property="og:title" content="Study Notes — Business Management &amp; Economics" />
-        <meta property="og:description" content="Interactive, richly explained study notes for Business Management and Economics." />
+        <title>Study Notes — Business Management, Economics &amp; Society</title>
+        <meta name="description" content="Interactive, richly explained study notes for Business Management, Economics, and Society & Culture. Covers theory, real-world examples and fully worked calculations." />
+        <meta property="og:title" content="Study Notes — Business Management, Economics &amp; Society" />
+        <meta property="og:description" content="Interactive, richly explained study notes for Business Management, Economics, and Society & Culture." />
         <meta property="og:image" content="https://notes.xwolf.space/og-home.svg" />
         <meta property="og:url" content="https://notes.xwolf.space/" />
         <meta name="twitter:title" content="Study Notes — Business Management &amp; Economics" />
@@ -162,6 +213,53 @@ export default function Home() {
                       </span>
                       {topic.status === "Available" ? (
                         <TrendingUp className="h-4 w-4 text-primary" />
+                      ) : (
+                        <span className="text-xs text-muted-foreground uppercase tracking-wider">{topic.status}</span>
+                      )}
+                    </div>
+                    <CardTitle className="font-serif text-xl leading-tight">{topic.title}</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <CardDescription className="text-sm text-muted-foreground leading-relaxed">
+                      {topic.description}
+                    </CardDescription>
+                  </CardContent>
+                </Card>
+              </Link>
+            ))}
+          </div>
+        </section>
+
+        {/* Divider */}
+        <div className="border-t border-border" />
+
+        {/* Unit 3 */}
+        <section>
+          <div className="mb-8">
+            <h2 className="text-sm font-bold tracking-widest text-secondary uppercase mb-3" data-testid="label-unit3">Unit 3</h2>
+            <h1 className="text-4xl md:text-5xl font-serif font-bold tracking-tight text-foreground mb-4">
+              Society &amp; Culture
+            </h1>
+            <p className="text-lg text-muted-foreground max-w-2xl">
+              An exploration of how human societies are formed, how individuals are shaped by socialization, and how culture — its symbols, language, values, and norms — defines what it means to be human. (UCCC 1103)
+            </p>
+          </div>
+          <div className="grid gap-6 md:grid-cols-2">
+            {unit3Topics.map((topic) => (
+              <Link
+                key={topic.id}
+                href={topic.href}
+                className={`block transition-transform hover:-translate-y-1 duration-200 ${topic.status !== "Available" ? "opacity-60 cursor-not-allowed pointer-events-none" : ""}`}
+                data-testid={`card-unit3-topic-${topic.id}`}
+              >
+                <Card className="h-full border-border/60 shadow-sm hover:shadow-md transition-shadow bg-card/50 backdrop-blur-sm">
+                  <CardHeader className="pb-3">
+                    <div className="flex items-center justify-between mb-2">
+                      <span className="text-xs font-semibold px-2 py-1 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 rounded-full">
+                        Week {topic.week}
+                      </span>
+                      {topic.status === "Available" ? (
+                        <Globe className="h-4 w-4 text-green-600 dark:text-green-400" />
                       ) : (
                         <span className="text-xs text-muted-foreground uppercase tracking-wider">{topic.status}</span>
                       )}
