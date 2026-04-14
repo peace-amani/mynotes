@@ -13,6 +13,7 @@ import EconomicsTopic5 from "@/pages/economics-topic-5";
 import SocietyTopic2 from "@/pages/society-topic-2";
 import SocietyTopic4 from "@/pages/society-topic-4";
 import SocietyTopic5 from "@/pages/society-topic-5";
+import SocietyTopic9 from "@/pages/society-topic-9";
 
 const queryClient = new QueryClient();
 
@@ -28,6 +29,7 @@ function Router() {
       <Route path="/society/2" component={SocietyTopic2} />
       <Route path="/society/4" component={SocietyTopic4} />
       <Route path="/society/5" component={SocietyTopic5} />
+      <Route path="/society/9" component={SocietyTopic9} />
       <Route component={NotFound} />
     </Switch>
   );

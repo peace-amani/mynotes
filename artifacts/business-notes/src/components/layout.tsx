@@ -35,6 +35,7 @@ export function Layout({ children, breadcrumbs }: LayoutProps) {
     { id: 4, title: "Socialization", available: true },
     { id: 5, title: "Culture", available: true },
     { id: 6, title: "Social Change", available: false },
+    { id: 9, title: "Social Processes", available: true },
   ];
 
   return (

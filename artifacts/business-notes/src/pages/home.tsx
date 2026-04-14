@@ -123,6 +123,14 @@ export default function Home() {
       status: "Upcoming",
       href: "#"
     },
+    {
+      id: 9,
+      week: 9,
+      title: "Social Processes",
+      description: "Competition, Conflict, Cooperation, Accommodation and Negotiation — meaning, characteristics, importance, and using each process to solve social problems.",
+      status: "Available",
+      href: "/society/9"
+    },
   ];
 
   return (
