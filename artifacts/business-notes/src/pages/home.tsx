@@ -80,7 +80,7 @@ export default function Home() {
     { id: 3, title: "Hygiene, Sanitation & Safety", description: "Personal and environmental hygiene, sanitation systems, food safety, and occupational safety.", status: "Upcoming", href: "#" },
     { id: 4, title: "Lifestyle Diseases", description: "NCDs — diabetes, hypertension, cancer, obesity — causes, prevention, and management.", status: "Upcoming", href: "#" },
     { id: 5, title: "Communicable Diseases", description: "Transmission, prevention, and control of major communicable diseases affecting Kenya.", status: "Upcoming", href: "#" },
-    { id: 6, title: "Introduction to Health Education", description: "Principles of health education, health promotion models, and community health strategies.", status: "Upcoming", href: "#" },
+    { id: 6, title: "Introduction to Health Education", description: "Objectives and value of health education; WHO determinants of health; defining health & well-being; Kenya's top 10 causes of mortality; causes and prevention of malaria, pneumonia, cancer, and road traffic accidents.", status: "Available", href: "/health/6" },
   ];
 
   const unit3Topics = [

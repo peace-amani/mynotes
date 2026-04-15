@@ -34,7 +34,7 @@ export function Layout({ children, breadcrumbs }: LayoutProps) {
     { id: 3, title: "Hygiene, Sanitation & Safety", available: false },
     { id: 4, title: "Lifestyle Diseases", available: false },
     { id: 5, title: "Communicable Diseases", available: false },
-    { id: 6, title: "Introduction to Health Education", available: false },
+    { id: 6, title: "Introduction to Health Education", available: true },
   ];
 
   const unit3Topics = [
