@@ -3,6 +3,7 @@ import { BookOpen, ChevronRight, Moon, Sun, Library, TrendingUp, Globe, HeartPul
 import { Button } from "@/components/ui/button";
 import { useTheme } from "@/components/theme-provider";
 import { ScrollArea } from "@/components/ui/scroll-area";
+import { AnnotationEngine } from "@/components/annotation-engine";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -265,9 +266,9 @@ export function Layout({ children, breadcrumbs }: LayoutProps) {
         </header>
 
         {/* Content Area */}
-        <div className="flex-1">
+        <AnnotationEngine>
           {children}
-        </div>
+        </AnnotationEngine>
       </main>
     </div>
   );
