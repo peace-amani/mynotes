@@ -1,5 +1,5 @@
 import { Link, useLocation } from "wouter";
-import { BookOpen, ChevronRight, Moon, Sun, Library, TrendingUp, Globe } from "lucide-react";
+import { BookOpen, ChevronRight, Moon, Sun, Library, TrendingUp, Globe, HeartPulse } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useTheme } from "@/components/theme-provider";
 import { ScrollArea } from "@/components/ui/scroll-area";
@@ -26,6 +26,15 @@ export function Layout({ children, breadcrumbs }: LayoutProps) {
     { id: 3, title: "Money and Banking", available: true },
     { id: 4, title: "Fiscal Policy", available: false },
     { id: 5, title: "Classical & Keynesian Theories", available: true },
+  ];
+
+  const unit4Topics = [
+    { id: 1, title: "HIV Prevention Strategies", available: true },
+    { id: 2, title: "Drug and Substance Abuse", available: true },
+    { id: 3, title: "Hygiene, Sanitation & Safety", available: false },
+    { id: 4, title: "Lifestyle Diseases", available: false },
+    { id: 5, title: "Communicable Diseases", available: false },
+    { id: 6, title: "Introduction to Health Education", available: false },
   ];
 
   const unit3Topics = [
@@ -172,6 +181,47 @@ export function Layout({ children, breadcrumbs }: LayoutProps) {
                 >
                   <Globe className="h-4 w-4 shrink-0" />
                   <span className="truncate">Week {topic.id}: {topic.title}</span>
+                </Link>
+              );
+            })}
+          </nav>
+
+          {/* Unit 4 */}
+          <div className="px-4 pt-6 pb-2">
+            <Link href="/">
+              <h2 className="text-xs font-bold tracking-wider text-muted-foreground uppercase hover:text-foreground transition-colors">
+                Unit 4 — Health Sciences
+              </h2>
+            </Link>
+          </div>
+          <nav className="space-y-1 px-2">
+            {unit4Topics.map((topic) => {
+              const isActive = location === `/health/${topic.id}`;
+              if (!topic.available) {
+                return (
+                  <div
+                    key={topic.id}
+                    className="flex items-center gap-3 rounded-md px-3 py-2 text-sm opacity-40 cursor-not-allowed"
+                    title="Coming soon"
+                  >
+                    <HeartPulse className="h-4 w-4 shrink-0" />
+                    <span className="truncate">{topic.title}</span>
+                  </div>
+                );
+              }
+              return (
+                <Link
+                  key={topic.id}
+                  href={`/health/${topic.id}`}
+                  className={`flex items-center gap-3 rounded-md px-3 py-2 text-sm transition-colors ${
+                    isActive
+                      ? "bg-sidebar-accent text-sidebar-accent-foreground font-medium"
+                      : "text-sidebar-foreground/70 hover:bg-sidebar-accent/50 hover:text-sidebar-foreground"
+                  }`}
+                  data-testid={`nav-unit4-topic-${topic.id}`}
+                >
+                  <HeartPulse className="h-4 w-4 shrink-0" />
+                  <span className="truncate">{topic.title}</span>
                 </Link>
               );
             })}
