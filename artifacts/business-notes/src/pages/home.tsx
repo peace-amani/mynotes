@@ -75,12 +75,12 @@ export default function Home() {
   ];
 
   const unit4Topics = [
-    { id: 1, title: "HIV Prevention Strategies", description: "Key facts, stages of infection, transmission, risk factors, diagnosis, 5 prevention strategies (sexual, VMMC, blood-borne, PMTCT, social), PrEP, PEP, ART, and Kenya's response.", status: "Available", href: "/health/1" },
-    { id: 2, title: "Drug and Substance Abuse", description: "Definitions, addiction science, marijuana, cocaine, tobacco, alcohol, hallucinogens, inhalants, opioids — signs, effects, treatment, and Kenya's NACADA policy framework.", status: "Available", href: "/health/2" },
-    { id: 3, title: "Hygiene, Sanitation & Safety", description: "Personal and environmental hygiene, sanitation systems, food safety, and occupational safety.", status: "Upcoming", href: "#" },
-    { id: 4, title: "Lifestyle Diseases", description: "NCDs — diabetes, hypertension, cancer, obesity — causes, prevention, and management.", status: "Upcoming", href: "#" },
-    { id: 5, title: "Communicable Diseases", description: "Transmission, prevention, and control of major communicable diseases affecting Kenya.", status: "Upcoming", href: "#" },
-    { id: 6, title: "Introduction to Health Education", description: "Objectives and value of health education; WHO determinants of health; defining health & well-being; Kenya's top 10 causes of mortality; causes and prevention of malaria, pneumonia, cancer, and road traffic accidents.", status: "Available", href: "/health/6" },
+    { id: 1, title: "Introduction to Health Education", description: "Objectives and value of health education; WHO determinants of health; defining health & well-being; Kenya's top 10 causes of mortality; causes and prevention of malaria, pneumonia, cancer, and road traffic accidents.", status: "Available", href: "/health/1" },
+    { id: 2, title: "HIV Prevention Strategies", description: "Key facts, stages of infection, transmission, risk factors, diagnosis, 5 prevention strategies (sexual, VMMC, blood-borne, PMTCT, social), PrEP, PEP, ART, and Kenya's response.", status: "Available", href: "/health/2" },
+    { id: 3, title: "Drug and Substance Abuse", description: "Definitions, addiction science, marijuana, cocaine, tobacco, alcohol, hallucinogens, inhalants, opioids — signs, effects, treatment, and Kenya's NACADA policy framework.", status: "Available", href: "/health/3" },
+    { id: 4, title: "Hygiene, Sanitation & Safety", description: "Definitions, types of sanitation, epidemiology, modes of disease transmission, food & waterborne diseases, hand washing, personal hygiene, water treatment, environmental health and waste disposal.", status: "Available", href: "/health/4" },
+    { id: 5, title: "Lifestyle Diseases", description: "NCDs — diabetes, hypertension, cancer, obesity — causes, prevention, and management.", status: "Upcoming", href: "#" },
+    { id: 6, title: "Communicable Diseases", description: "Transmission, prevention, and control of major communicable diseases affecting Kenya.", status: "Upcoming", href: "#" },
   ];
 
   const unit3Topics = [

@@ -29,12 +29,12 @@ export function Layout({ children, breadcrumbs }: LayoutProps) {
   ];
 
   const unit4Topics = [
-    { id: 1, title: "HIV Prevention Strategies", available: true },
-    { id: 2, title: "Drug and Substance Abuse", available: true },
-    { id: 3, title: "Hygiene, Sanitation & Safety", available: false },
-    { id: 4, title: "Lifestyle Diseases", available: false },
-    { id: 5, title: "Communicable Diseases", available: false },
-    { id: 6, title: "Introduction to Health Education", available: true },
+    { id: 1, title: "Introduction to Health Education", available: true },
+    { id: 2, title: "HIV Prevention Strategies", available: true },
+    { id: 3, title: "Drug and Substance Abuse", available: true },
+    { id: 4, title: "Hygiene, Sanitation & Safety", available: true },
+    { id: 5, title: "Lifestyle Diseases", available: false },
+    { id: 6, title: "Communicable Diseases", available: false },
   ];
 
   const unit3Topics = [
