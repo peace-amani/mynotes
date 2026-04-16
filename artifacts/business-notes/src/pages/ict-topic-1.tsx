@@ -546,7 +546,7 @@ export default function IctTopic1() {
           <ul className="list-disc pl-6 space-y-1 text-sm">
             <li>Insert → Page Number → choose position: Top of Page, Bottom of Page, Page Margins, or Current Position.</li>
             <li>Insert → Page Number → Format Page Numbers → set number format (1, 2, 3 or i, ii, iii or A, B, C) and the start number (e.g., start at 0 to show "1" on the second page after a cover).</li>
-            <li>To show "Page X of Y": Insert → Page Number → Page X of Y preset, or manually use <code>{ PAGE }</code> and <code>{ NUMPAGES }</code> field codes.</li>
+            <li>To show "Page X of Y": Insert → Page Number → Page X of Y preset, or manually use <code>{'{ PAGE }'}</code> and <code>{'{ NUMPAGES }'}</code> field codes.</li>
           </ul>
 
           {/* ═══════════════════════════════════════ */}
