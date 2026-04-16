@@ -2,7 +2,7 @@ import { Helmet } from "react-helmet-async";
 import { Link } from "wouter";
 import { Layout } from "@/components/layout";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { BookOpen, TrendingUp, Globe, HeartPulse } from "lucide-react";
+import { BookOpen, TrendingUp, Globe, HeartPulse, Monitor } from "lucide-react";
 
 export default function Home() {
   const unit1Topics = [
@@ -81,6 +81,23 @@ export default function Home() {
     { id: 4, title: "Hygiene, Sanitation & Safety", description: "Definitions, types of sanitation, epidemiology, modes of disease transmission, food & waterborne diseases, hand washing, personal hygiene, water treatment, environmental health and waste disposal.", status: "Available", href: "/health/4" },
     { id: 5, title: "Lifestyle Diseases", description: "NCDs — diabetes, hypertension, cancer, obesity — causes, prevention, and management.", status: "Upcoming", href: "#" },
     { id: 6, title: "Communicable Diseases", description: "Transmission, prevention, and control of major communicable diseases affecting Kenya.", status: "Upcoming", href: "#" },
+  ];
+
+  const unit5Topics = [
+    {
+      id: 1,
+      title: "Microsoft Word",
+      description: "Interface, Ribbon tabs, creating/saving documents, file formats, text & paragraph formatting, page layout, tables, lists, headers/footers, Mail Merge, Track Changes, Find & Replace, and all keyboard shortcuts.",
+      status: "Available",
+      href: "/ict/1"
+    },
+    {
+      id: 2,
+      title: "Microsoft Excel",
+      description: "Spreadsheet interface, cell references (relative/absolute/mixed), formulas & operators, SUM/AVERAGE/COUNT/IF/VLOOKUP/INDEX-MATCH, text & date functions, sorting/filtering, conditional formatting, charts, pivot tables, error messages, and all shortcuts.",
+      status: "Available",
+      href: "/ict/2"
+    },
   ];
 
   const unit3Topics = [
@@ -232,6 +249,53 @@ export default function Home() {
                       </span>
                       {topic.status === "Available" ? (
                         <HeartPulse className="h-4 w-4 text-rose-600 dark:text-rose-400" />
+                      ) : (
+                        <span className="text-xs text-muted-foreground uppercase tracking-wider">{topic.status}</span>
+                      )}
+                    </div>
+                    <CardTitle className="font-serif text-xl leading-tight">{topic.title}</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <CardDescription className="text-sm text-muted-foreground leading-relaxed">
+                      {topic.description}
+                    </CardDescription>
+                  </CardContent>
+                </Card>
+              </Link>
+            ))}
+          </div>
+        </section>
+
+        {/* Divider */}
+        <div className="border-t border-border" />
+
+        {/* Unit 5 — ICT */}
+        <section>
+          <div className="mb-8">
+            <h2 className="text-sm font-bold tracking-widest text-secondary uppercase mb-3" data-testid="label-unit5">Unit 5</h2>
+            <h1 className="text-4xl md:text-5xl font-serif font-bold tracking-tight text-foreground mb-4">
+              ICT — Computer Applications
+            </h1>
+            <p className="text-lg text-muted-foreground max-w-2xl">
+              Comprehensive, exam-ready notes on Microsoft Word and Microsoft Excel — covering every feature, function, and keyboard shortcut you need for your CAT.
+            </p>
+          </div>
+          <div className="grid gap-6 md:grid-cols-2">
+            {unit5Topics.map((topic) => (
+              <Link
+                key={topic.id}
+                href={topic.href}
+                className={`block transition-transform hover:-translate-y-1 duration-200 ${topic.status !== "Available" ? "opacity-60 cursor-not-allowed pointer-events-none" : ""}`}
+                data-testid={`card-unit5-topic-${topic.id}`}
+              >
+                <Card className="h-full border-border/60 shadow-sm hover:shadow-md transition-shadow bg-card/50 backdrop-blur-sm">
+                  <CardHeader className="pb-3">
+                    <div className="flex items-center justify-between mb-2">
+                      <span className="text-xs font-semibold px-2 py-1 bg-indigo-100 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-400 rounded-full">
+                        Topic {topic.id}
+                      </span>
+                      {topic.status === "Available" ? (
+                        <Monitor className="h-4 w-4 text-indigo-600 dark:text-indigo-400" />
                       ) : (
                         <span className="text-xs text-muted-foreground uppercase tracking-wider">{topic.status}</span>
                       )}

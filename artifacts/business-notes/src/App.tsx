@@ -26,6 +26,8 @@ import SocietyTopic9 from "@/pages/society-topic-9";
 import SocietyTopic10 from "@/pages/society-topic-10";
 import SocietyTopic11 from "@/pages/society-topic-11";
 import SocietyTopic12 from "@/pages/society-topic-12";
+import IctTopic1 from "@/pages/ict-topic-1";
+import IctTopic2 from "@/pages/ict-topic-2";
 
 const queryClient = new QueryClient();
 
@@ -54,6 +56,8 @@ function Router() {
       <Route path="/society/10" component={SocietyTopic10} />
       <Route path="/society/11" component={SocietyTopic11} />
       <Route path="/society/12" component={SocietyTopic12} />
+      <Route path="/ict/1" component={IctTopic1} />
+      <Route path="/ict/2" component={IctTopic2} />
       <Route component={NotFound} />
     </Switch>
   );
