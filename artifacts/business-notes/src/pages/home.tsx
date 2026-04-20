@@ -2,7 +2,7 @@ import { Helmet } from "react-helmet-async";
 import { Link } from "wouter";
 import { Layout } from "@/components/layout";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { BookOpen, TrendingUp, Globe, HeartPulse, Monitor } from "lucide-react";
+import { BookOpen, TrendingUp, Globe, HeartPulse, Monitor, Calculator } from "lucide-react";
 
 export default function Home() {
   const unit1Topics = [
@@ -72,6 +72,23 @@ export default function Home() {
       status: "Available",
       href: "/economics/5"
     }
+  ];
+
+  const accountingTopics = [
+    {
+      id: 1,
+      title: "Partnership Accounts",
+      description: "What is a partnership, advantages/disadvantages, the Partnership Act, capital and current accounts, profit sharing, drawings, interest on capital, partners' salaries, goodwill, appropriation of profits, guaranteed share of profits, debit balances, and worked examples.",
+      status: "Available",
+      href: "/accounting/1"
+    },
+    {
+      id: 2,
+      title: "Company Final Accounts",
+      description: "Companies vs. sole traders, Trading P&L and appropriation account format, directors' salaries, audit fees, debenture interest, corporation tax, dividends (interim and proposed), capital reserves (share premium, revaluation, capital redemption), revenue reserves, debenture loans, bonus shares, and worked examples.",
+      status: "Available",
+      href: "/accounting/2"
+    },
   ];
 
   const unit4Topics = [
@@ -155,6 +172,53 @@ export default function Home() {
                       </span>
                       {topic.status === "Available" ? (
                         <BookOpen className="h-4 w-4 text-secondary" />
+                      ) : (
+                        <span className="text-xs text-muted-foreground uppercase tracking-wider">{topic.status}</span>
+                      )}
+                    </div>
+                    <CardTitle className="font-serif text-xl leading-tight">{topic.title}</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <CardDescription className="text-sm text-muted-foreground leading-relaxed">
+                      {topic.description}
+                    </CardDescription>
+                  </CardContent>
+                </Card>
+              </Link>
+            ))}
+          </div>
+        </section>
+
+        {/* Divider */}
+        <div className="border-t border-border" />
+
+        {/* Accounting Unit */}
+        <section>
+          <div className="mb-8">
+            <h2 className="text-sm font-bold tracking-widest text-amber-600 dark:text-amber-400 uppercase mb-3" data-testid="label-accounting">Accounting (ACC 211)</h2>
+            <h1 className="text-4xl md:text-5xl font-serif font-bold tracking-tight text-foreground mb-4">
+              Accounting
+            </h1>
+            <p className="text-lg text-muted-foreground max-w-2xl">
+              Financial accounting for partnerships and limited companies — covering the preparation of final accounts, appropriation of profits, capital and current accounts, reserves, dividends, and company-specific items such as debentures and corporation tax.
+            </p>
+          </div>
+          <div className="grid gap-6 md:grid-cols-2">
+            {accountingTopics.map((topic) => (
+              <Link
+                key={topic.id}
+                href={topic.href}
+                className={`block transition-transform hover:-translate-y-1 duration-200 ${topic.status !== "Available" ? "opacity-60 cursor-not-allowed pointer-events-none" : ""}`}
+                data-testid={`card-accounting-topic-${topic.id}`}
+              >
+                <Card className="h-full border-border/60 shadow-sm hover:shadow-md transition-shadow bg-card/50 backdrop-blur-sm">
+                  <CardHeader className="pb-3">
+                    <div className="flex items-center justify-between mb-2">
+                      <span className="text-xs font-semibold px-2 py-1 bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-400 rounded-full">
+                        Topic {topic.id}
+                      </span>
+                      {topic.status === "Available" ? (
+                        <Calculator className="h-4 w-4 text-amber-600 dark:text-amber-400" />
                       ) : (
                         <span className="text-xs text-muted-foreground uppercase tracking-wider">{topic.status}</span>
                       )}
