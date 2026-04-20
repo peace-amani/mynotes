@@ -1,5 +1,5 @@
 import { Link, useLocation } from "wouter";
-import { BookOpen, ChevronRight, Moon, Sun, Library, TrendingUp, Globe, HeartPulse, Monitor } from "lucide-react";
+import { BookOpen, ChevronRight, Moon, Sun, Library, TrendingUp, Globe, HeartPulse, Monitor, Calculator } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useTheme } from "@/components/theme-provider";
 import { ScrollArea } from "@/components/ui/scroll-area";
@@ -41,6 +41,11 @@ export function Layout({ children, breadcrumbs }: LayoutProps) {
   const unit5Topics = [
     { id: 1, title: "Microsoft Word", available: true },
     { id: 2, title: "Microsoft Excel", available: true },
+  ];
+
+  const accountingTopics = [
+    { id: 1, title: "Partnership Accounts", available: true },
+    { id: 2, title: "Company Final Accounts", available: true },
   ];
 
   const unit3Topics = [
@@ -257,6 +262,34 @@ export function Layout({ children, breadcrumbs }: LayoutProps) {
                 >
                   <Monitor className="h-4 w-4 shrink-0" />
                   <span className="truncate">{topic.title}</span>
+                </Link>
+              );
+            })}
+          </nav>
+          {/* Unit 6 — Accounting */}
+          <div className="px-4 pt-6 pb-2">
+            <Link href="/">
+              <h2 className="text-xs font-bold tracking-wider text-muted-foreground uppercase hover:text-foreground transition-colors">
+                Unit 6 — Accounting
+              </h2>
+            </Link>
+          </div>
+          <nav className="space-y-1 px-2">
+            {accountingTopics.map((topic) => {
+              const isActive = location === `/accounting/${topic.id}`;
+              return (
+                <Link
+                  key={topic.id}
+                  href={`/accounting/${topic.id}`}
+                  className={`flex items-center gap-3 rounded-md px-3 py-2 text-sm transition-colors ${
+                    isActive
+                      ? "bg-sidebar-accent text-sidebar-accent-foreground font-medium"
+                      : "text-sidebar-foreground/70 hover:bg-sidebar-accent/50 hover:text-sidebar-foreground"
+                  }`}
+                  data-testid={`nav-accounting-topic-${topic.id}`}
+                >
+                  <Calculator className="h-4 w-4 shrink-0" />
+                  <span className="truncate">Topic {topic.id}: {topic.title}</span>
                 </Link>
               );
             })}
