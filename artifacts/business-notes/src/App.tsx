@@ -11,6 +11,7 @@ import EconomicsTopic1 from "@/pages/economics-topic-1";
 import EconomicsTopic2 from "@/pages/economics-topic-2";
 import EconomicsTopic3 from "@/pages/economics-topic-3";
 import EconomicsTopic5 from "@/pages/economics-topic-5";
+import EconomicsTopic6 from "@/pages/economics-topic-6";
 import HealthEdIntro from "@/pages/health-topic-6";
 import HivPrevention from "@/pages/health-topic-1";
 import DrugAbuse from "@/pages/health-topic-2";
@@ -43,6 +44,7 @@ function Router() {
       <Route path="/economics/2" component={EconomicsTopic2} />
       <Route path="/economics/3" component={EconomicsTopic3} />
       <Route path="/economics/5" component={EconomicsTopic5} />
+      <Route path="/economics/6" component={EconomicsTopic6} />
       <Route path="/health/1" component={HealthEdIntro} />
       <Route path="/health/2" component={HivPrevention} />
       <Route path="/health/3" component={DrugAbuse} />

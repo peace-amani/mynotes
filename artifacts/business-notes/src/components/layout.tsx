@@ -27,6 +27,7 @@ export function Layout({ children, breadcrumbs }: LayoutProps) {
     { id: 3, title: "Money and Banking", available: true },
     { id: 4, title: "Fiscal Policy", available: false },
     { id: 5, title: "Classical & Keynesian Theories", available: true },
+    { id: 6, title: "Circular Flow & Macro Theory", available: true },
   ];
 
   const unit4Topics = [

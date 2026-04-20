@@ -71,6 +71,13 @@ export default function Home() {
       description: "Say's Law, consumption function, MPC, APC, APS, the multiplier, equilibrium income, and 20 worked examples.",
       status: "Available",
       href: "/economics/5"
+    },
+    {
+      id: 6,
+      title: "Circular Flow & Development of Macroeconomic Theory",
+      description: "Two-sector, three-sector, and four-sector circular flow models; Y = C + I + G + (X − M); leakages and injections; development of macroeconomic theory from the Great Depression to modern schools of thought (Keynesian, New Classical, New Keynesian).",
+      status: "Available",
+      href: "/economics/6"
     }
   ];
 
