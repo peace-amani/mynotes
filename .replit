@@ -9,28 +9,6 @@ args = ["pnpm", "store", "prune"]
 env = { "CI" = "true" }
 
 [workflows]
-runButton = "Project"
-
-[[workflows.workflow]]
-name = "Project"
-mode = "parallel"
-author = "agent"
-
-[[workflows.workflow.tasks]]
-task = "workflow.run"
-args = "Start application"
-
-[[workflows.workflow]]
-name = "Start application"
-author = "agent"
-
-[workflows.workflow.metadata]
-outputType = "webview"
-
-[[workflows.workflow.tasks]]
-task = "shell.exec"
-args = "PORT=22827 BASE_PATH=/ pnpm --filter @workspace/business-notes run dev"
-waitForPort = 22827
 
 [agent]
 stack = "PNPM_WORKSPACE"
@@ -51,6 +29,10 @@ externalPort = 80
 [[ports]]
 localPort = 22827
 externalPort = 3000
+
+[[ports]]
+localPort = 22828
+externalPort = 3001
 
 [userenv]
 
