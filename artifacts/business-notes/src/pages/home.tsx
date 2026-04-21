@@ -23,9 +23,9 @@ export default function Home() {
     {
       id: 3,
       title: "Evolution of Management Thought",
-      description: "Classical, behavioral, quantitative, and contemporary approaches.",
-      status: "Upcoming",
-      href: "#"
+      description: "Pre-scientific era; Scientific Management (Taylor, Gilbreth, Gantt); Administrative Management (Fayol's 5 functions and 14 principles); Bureaucratic Theory (Weber); Hawthorne Studies; Human Relations; Maslow, McGregor's Theory X/Y, Herzberg; Quantitative School; Systems Theory; Contingency Theory; TQM, MBO, and modern approaches.",
+      status: "Available",
+      href: "/topic/3"
     },
     {
       id: 4,
