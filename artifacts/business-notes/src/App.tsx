@@ -33,6 +33,7 @@ import IctTopic1 from "@/pages/ict-topic-1";
 import IctTopic2 from "@/pages/ict-topic-2";
 import AccountingTopic1 from "@/pages/accounting-topic-1";
 import AccountingTopic2 from "@/pages/accounting-topic-2";
+import AccountingTopic3 from "@/pages/accounting-topic-3";
 
 const queryClient = new QueryClient();
 
@@ -68,6 +69,7 @@ function Router() {
       <Route path="/ict/2" component={IctTopic2} />
       <Route path="/accounting/1" component={AccountingTopic1} />
       <Route path="/accounting/2" component={AccountingTopic2} />
+      <Route path="/accounting/3" component={AccountingTopic3} />
       <Route component={NotFound} />
     </Switch>
   );

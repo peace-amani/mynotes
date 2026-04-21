@@ -103,6 +103,13 @@ export default function Home() {
       status: "Available",
       href: "/accounting/2"
     },
+    {
+      id: 3,
+      title: "Control Accounts & Incomplete Records",
+      description: "Purpose and format of Sales Ledger Control Account (SLCA) and Purchases Ledger Control Account (PLCA) — every entry explained with examples. Special entries: refunds, contra/set-off, dishonoured cheques, bad debts. Incomplete records: Statement of Affairs, net worth method, reconstructing sales and purchases from control accounts, GP% workings, accruals and prepayments adjustments. Full worked examples including G. Mwangi + 4 past-paper practice questions.",
+      status: "Available",
+      href: "/accounting/3"
+    },
   ];
 
   const unit4Topics = [

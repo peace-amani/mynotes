@@ -48,6 +48,7 @@ export function Layout({ children, breadcrumbs }: LayoutProps) {
   const accountingTopics = [
     { id: 1, title: "Partnership Accounts", available: true },
     { id: 2, title: "Company Final Accounts", available: true },
+    { id: 3, title: "Control Accounts & Incomplete Records", available: true },
   ];
 
   const unit3Topics = [
