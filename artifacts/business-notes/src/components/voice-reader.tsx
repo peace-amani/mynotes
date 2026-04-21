@@ -205,6 +205,23 @@ export function VoiceReader() {
   useEffect(() => { chunksRef.current = chunks; }, [chunks]);
   useEffect(() => { speakingRef.current = speaking; }, [speaking]);
 
+  // ── Global keyboard shortcuts ─────────────────────────────────────────────
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      const tag = (e.target as HTMLElement).tagName;
+      if (tag === "INPUT" || tag === "TEXTAREA" || tag === "SELECT") return;
+      if (e.key === " " || e.code === "Space") {
+        if (speakingRef.current || paused) {
+          e.preventDefault();
+          handlePauseResume();
+        }
+      }
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [paused]);
+
   // Inject waveform CSS keyframes once
   useEffect(() => {
     if (document.getElementById("jarvis-wave-style")) return;
@@ -370,10 +387,11 @@ export function VoiceReader() {
   // ── Floating button ────────────────────────────────────────────────────────
   return (
     <>
-      {/* Floating trigger button */}
+      {/* Floating trigger / pause button */}
       <button
-        onClick={() => setOpen((o) => !o)}
-        aria-label="Open Study AI voice reader"
+        onClick={speaking || paused ? handlePauseResume : () => setOpen((o) => !o)}
+        aria-label={speaking ? "Pause reading" : paused ? "Resume reading" : "Open Study AI voice reader"}
+        title={speaking ? "Pause (Space)" : paused ? "Resume (Space)" : "Open reader"}
         style={{
           position: "fixed",
           bottom: 80,
@@ -382,18 +400,28 @@ export function VoiceReader() {
           width: 54,
           height: 54,
           borderRadius: "50%",
-          background: "linear-gradient(135deg, #0f172a 0%, #164e63 100%)",
-          border: "2px solid #06b6d4",
+          background: paused
+            ? "linear-gradient(135deg, #1c1003 0%, #78350f 100%)"
+            : "linear-gradient(135deg, #0f172a 0%, #164e63 100%)",
+          border: paused ? "2px solid #f59e0b" : "2px solid #06b6d4",
           cursor: "pointer",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          animation: speaking ? "jarvis-pulse 1.5s ease-in-out infinite" : "none",
-          boxShadow: "0 0 16px rgba(6,182,212,0.5)",
-          transition: "box-shadow 0.3s",
+          animation: speaking && !paused ? "jarvis-pulse 1.5s ease-in-out infinite" : "none",
+          boxShadow: paused
+            ? "0 0 18px rgba(245,158,11,0.6)"
+            : "0 0 16px rgba(6,182,212,0.5)",
+          transition: "all 0.3s",
         }}
       >
-        <Volume2 size={22} color="#06b6d4" />
+        {paused ? (
+          <Play size={22} color="#f59e0b" />
+        ) : speaking ? (
+          <Pause size={22} color="#06b6d4" />
+        ) : (
+          <Volume2 size={22} color="#06b6d4" />
+        )}
       </button>
 
       {/* ── The Jarvis panel ── */}
