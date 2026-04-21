@@ -72,38 +72,63 @@ const STUDY_UNITS = [
 
 // ── Extract readable text from current page DOM ──────────────────────────────
 function extractPageChunks(): string[] {
-  // Target the main notes content area — the wide content column
-  const content =
-    document.querySelector(".flex-1.min-w-0.max-w-3xl") ||
-    document.querySelector("main .flex-1");
+  // Try multiple selectors that cover every page type in the app
+  const CONTENT_SELECTORS = [
+    ".flex-1.min-w-0.max-w-3xl",       // topic-2, topic-3, accounting-3 pages
+    "article.flex-1",                    // topic-1 (older format)
+    "article",                           // generic article fallback
+    ".container.mx-auto.max-w-5xl",     // home page
+    ".container.mx-auto.max-w-4xl",
+    ".container.mx-auto",
+    "main .prose",                       // prose content pages
+  ];
 
-  if (!content) {
-    // Fallback: grab body text
-    return [document.body.innerText.slice(0, 2000)];
+  let content: Element | null = null;
+  for (const sel of CONTENT_SELECTORS) {
+    const el = document.querySelector(sel);
+    if (el && el.textContent && el.textContent.trim().length > 100) {
+      content = el;
+      break;
+    }
   }
 
+  // Last resort: everything inside <main> minus sidebar/nav/header
+  if (!content) content = document.querySelector("main");
+  if (!content) content = document.body;
+
   const chunks: string[] = [];
-  const elements = content.querySelectorAll("h1, h2, h3, p, li, td");
+  const elements = content.querySelectorAll("h1, h2, h3, h4, p, li, td, blockquote");
 
   let currentBlock = "";
   elements.forEach((el) => {
+    // Skip content that lives inside navigation, sidebars, sticky TOCs, or header bars
+    if (
+      el.closest("aside") ||
+      el.closest("nav") ||
+      el.closest("header") ||
+      el.closest("[data-testid]") ||    // sidebar nav items have data-testid
+      (el.closest("div") &&
+        (el.closest("div")?.className?.includes("sticky") ||
+         el.closest("div")?.className?.includes("w-56") ||
+         el.closest("div")?.className?.includes("shrink-0")))
+    ) return;
+
     const tag = el.tagName.toLowerCase();
     const text = el.textContent?.replace(/\s+/g, " ").trim() ?? "";
     if (!text || text.length < 4) return;
 
-    if (tag === "h1" || tag === "h2" || tag === "h3") {
-      if (currentBlock) chunks.push(currentBlock.trim());
+    if (tag === "h1" || tag === "h2" || tag === "h3" || tag === "h4") {
+      if (currentBlock.trim().length > 10) chunks.push(currentBlock.trim());
       currentBlock = text + ". ";
     } else {
       currentBlock += text + " ";
-      // Break into ~400-char chunks so the reader doesn't run on too long
-      if (currentBlock.length > 400) {
+      if (currentBlock.length > 450) {
         chunks.push(currentBlock.trim());
         currentBlock = "";
       }
     }
   });
-  if (currentBlock.trim()) chunks.push(currentBlock.trim());
+  if (currentBlock.trim().length > 10) chunks.push(currentBlock.trim());
   return chunks.filter((c) => c.length > 10);
 }
 
@@ -234,7 +259,31 @@ export function VoiceReader() {
     });
   }, [speakChunk]);
 
-  // ── Start reading a topic ──────────────────────────────────────────────────
+  // ── Speak extracted chunks with intro phrase ───────────────────────────────
+  const beginReading = useCallback(
+    (extracted: string[], topicTitle: string) => {
+      setChunks(extracted);
+      chunksRef.current = extracted;
+
+      const intro = new SpeechSynthesisUtterance(
+        `Good day. I am your study assistant. Now reading: ${topicTitle}.`
+      );
+      intro.pitch = 0.85;
+      intro.rate = 0.92;
+      const voice = pickVoice();
+      if (voice) intro.voice = voice;
+      intro.onend = () => {
+        setSpeaking(true);
+        speakingRef.current = true;
+        readNext(0, extracted);
+      };
+      speechSynthesis.speak(intro);
+      setStatusText(`Reading: ${topicTitle}`);
+    },
+    [readNext]
+  );
+
+  // ── Start reading a topic (navigate then extract) ─────────────────────────
   const startReading = useCallback(
     (path: string, topicTitle: string) => {
       speechSynthesis.cancel();
@@ -242,39 +291,26 @@ export function VoiceReader() {
       setPaused(false);
       setActiveTopicPath(path);
       setStatusText(`Navigating to ${topicTitle}…`);
-
-      // Navigate first, then wait for DOM to render
       setLocation(path);
       setOpen(true);
 
-      setTimeout(() => {
+      // Try to extract text up to 3 times, giving React time to render
+      let attempt = 0;
+      const tryExtract = () => {
+        attempt += 1;
         const extracted = extractPageChunks();
-        if (!extracted.length) {
-          setStatusText("Could not extract notes. Try again in a moment.");
-          return;
+        if (extracted.length > 0) {
+          beginReading(extracted, topicTitle);
+        } else if (attempt < 4) {
+          setStatusText(`Loading content… (attempt ${attempt}/3)`);
+          setTimeout(tryExtract, 950);
+        } else {
+          setStatusText('Ready. Press "READ THIS PAGE" to begin.');
         }
-        setChunks(extracted);
-        chunksRef.current = extracted;
-
-        // Intro phrase
-        const intro = new SpeechSynthesisUtterance(
-          `Good day. I am your study assistant. Now reading: ${topicTitle}.`
-        );
-        intro.pitch = 0.85;
-        intro.rate = 0.92;
-        const voice = pickVoice();
-        if (voice) intro.voice = voice;
-
-        intro.onend = () => {
-          setSpeaking(true);
-          speakingRef.current = true;
-          readNext(0, extracted);
-        };
-        speechSynthesis.speak(intro);
-        setStatusText(`Reading: ${topicTitle}`);
-      }, 1600);
+      };
+      setTimeout(tryExtract, 1200);
     },
-    [setLocation, readNext]
+    [setLocation, beginReading]
   );
 
   // ── Read CURRENT page ──────────────────────────────────────────────────────
@@ -282,7 +318,7 @@ export function VoiceReader() {
     speechSynthesis.cancel();
     const extracted = extractPageChunks();
     if (!extracted.length) {
-      setStatusText("No readable content found on this page.");
+      setStatusText("Nothing readable found. Try scrolling down first.");
       return;
     }
     setChunks(extracted);
