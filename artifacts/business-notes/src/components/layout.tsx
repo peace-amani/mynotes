@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { useTheme } from "@/components/theme-provider";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { AnnotationEngine } from "@/components/annotation-engine";
+import { VoiceReader } from "@/components/voice-reader";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -340,6 +341,9 @@ export function Layout({ children, breadcrumbs }: LayoutProps) {
           {children}
         </AnnotationEngine>
       </main>
+
+      {/* Voice Reader — available on every page */}
+      <VoiceReader />
     </div>
   );
 }
