@@ -15,20 +15,27 @@ export default function Home() {
     },
     {
       id: 2,
+      title: "Forms of Business Organizations",
+      description: "Sole proprietorship, ordinary and limited partnerships, private and public limited companies, co-operatives (7 types), government departments, state corporations, PPPs, NGOs, and multinational corporations — with characteristics, advantages, disadvantages, and Kenya examples throughout.",
+      status: "Available",
+      href: "/topic/2"
+    },
+    {
+      id: 3,
       title: "Evolution of Management Thought",
       description: "Classical, behavioral, quantitative, and contemporary approaches.",
       status: "Upcoming",
       href: "#"
     },
     {
-      id: 3,
+      id: 4,
       title: "Planning",
       description: "Goal setting, strategy formulation, and decision making.",
       status: "Upcoming",
       href: "#"
     },
     {
-      id: 4,
+      id: 5,
       title: "Organizing",
       description: "Organizational structure, design, and human resource management.",
       status: "Upcoming",

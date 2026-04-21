@@ -16,9 +16,10 @@ export function Layout({ children, breadcrumbs }: LayoutProps) {
 
   const unit1Topics = [
     { id: 1, title: "Introduction to Management", available: true },
-    { id: 2, title: "Evolution of Management Thought", available: false },
-    { id: 3, title: "Planning", available: false },
-    { id: 4, title: "Organizing", available: false },
+    { id: 2, title: "Forms of Business Organizations", available: true },
+    { id: 3, title: "Evolution of Management Thought", available: false },
+    { id: 4, title: "Planning", available: false },
+    { id: 5, title: "Organizing", available: false },
   ];
 
   const unit2Topics = [
