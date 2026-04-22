@@ -133,7 +133,7 @@ export default function SocietyTopic9() {
           {/* Hero */}
           <div className="mb-10">
             <p className="text-xs font-bold tracking-widest text-secondary uppercase mb-3">Week 9 · Society &amp; Culture</p>
-            <h1 className="text-4xl md:text-5xl font-serif font-bold text-foreground mb-4 leading-tight">Social Processes</h1>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-foreground mb-4 leading-tight">Social Processes</h1>
             <p className="text-lg text-muted-foreground leading-relaxed">
               Social life is not static — it is driven by dynamic processes through which individuals and groups interact, compete, clash, collaborate, adjust, and negotiate. Understanding these processes is essential for analysing how societies function, how problems arise, and how they can be resolved. This week covers five key social processes: <strong>Competition, Conflict, Cooperation, Accommodation,</strong> and <strong>Negotiation</strong> — each examined for its meaning, characteristics, importance, and role in solving social problems.
             </p>

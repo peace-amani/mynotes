@@ -88,7 +88,7 @@ export default function HealthTopic3() {
           {/* Hero */}
           <div className="mb-10">
             <p className="text-xs font-bold tracking-widest text-secondary uppercase mb-3">Unit 4 · Health Sciences</p>
-            <h1 className="text-4xl md:text-5xl font-serif font-bold text-foreground mb-4 leading-tight">Hygiene, Sanitation &amp; Safety</h1>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-foreground mb-4 leading-tight">Hygiene, Sanitation &amp; Safety</h1>
             <p className="text-lg text-muted-foreground leading-relaxed">
               Poor hygiene and inadequate sanitation are among the most persistent and preventable causes of illness and death worldwide, and Kenya is no exception. These notes cover the foundational definitions, the science of how diseases spread (epidemiology and modes of transmission), the specific diseases linked to poor hygiene, and the full range of practices — from hand washing to sewage treatment — that protect individual and community health. Alongside each concept is an explanation of <em>why</em> it matters and how it applies in the Kenyan context.
             </p>

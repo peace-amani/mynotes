@@ -150,7 +150,7 @@ export default function AccountingTopic3() {
           {/* Hero */}
           <div className="mb-10">
             <p className="text-xs font-bold tracking-widest text-amber-600 dark:text-amber-400 uppercase mb-3">Accounting (ACC 211)</p>
-            <h1 className="text-4xl md:text-5xl font-serif font-bold text-foreground mb-4 leading-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-foreground mb-4 leading-tight">
               Control Accounts &amp; Incomplete Records
             </h1>
             <p className="text-lg text-muted-foreground leading-relaxed">

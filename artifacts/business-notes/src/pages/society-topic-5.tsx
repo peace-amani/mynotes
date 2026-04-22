@@ -104,7 +104,7 @@ export default function SocietyTopic5() {
           {/* Hero */}
           <div className="mb-10">
             <p className="text-xs font-bold tracking-widest text-secondary uppercase mb-3">Week 5 · Society &amp; Culture</p>
-            <h1 className="text-4xl md:text-5xl font-serif font-bold text-foreground mb-4 leading-tight">Culture</h1>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-foreground mb-4 leading-tight">Culture</h1>
             <p className="text-lg text-muted-foreground leading-relaxed">
               Culture is simultaneously the most obvious and the most invisible feature of human life. It shapes everything we do — how we eat, dress, speak, pray, mourn, celebrate, and understand the world — yet it is so deeply embedded in our daily existence that we rarely notice it. This week we unpack what culture is, what its characteristics are, and what its core elements consist of.
             </p>

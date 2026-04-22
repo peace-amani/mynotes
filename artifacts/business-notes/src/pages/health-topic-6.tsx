@@ -81,7 +81,7 @@ export default function HealthTopic6() {
           {/* Hero */}
           <div className="mb-10">
             <p className="text-xs font-bold tracking-widest text-secondary uppercase mb-3">Unit 4 · Health Sciences</p>
-            <h1 className="text-4xl md:text-5xl font-serif font-bold text-foreground mb-4 leading-tight">Introduction to Health Education</h1>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-foreground mb-4 leading-tight">Introduction to Health Education</h1>
             <p className="text-lg text-muted-foreground leading-relaxed">
               Health education is the bridge between what we know about health and what we actually do about it. These notes cover the meaning, objectives, and value of health education; how the World Health Organisation defines health; what determines whether people are healthy; Kenya's leading causes of death; and detailed prevention strategies for four of the most deadly and common conditions — malaria, pneumonia, cancer, and road traffic accidents.
             </p>

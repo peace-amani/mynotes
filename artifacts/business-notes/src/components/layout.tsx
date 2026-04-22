@@ -4,7 +4,7 @@ import { BookOpen, ChevronRight, Moon, Sun, Library, TrendingUp, Globe, HeartPul
 import { Button } from "@/components/ui/button";
 import { useTheme } from "@/components/theme-provider";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { AnnotationEngine } from "@/components/annotation-engine";
 import { VoiceReader } from "@/components/voice-reader";
 
@@ -360,7 +360,8 @@ export function Layout({ children, breadcrumbs }: LayoutProps) {
                   <Menu className="h-5 w-5" />
                 </Button>
               </SheetTrigger>
-              <SheetContent side="left" className="w-72 p-0 flex flex-col bg-sidebar border-r border-sidebar-border">
+              <SheetContent side="left" className="w-72 p-0 flex flex-col bg-sidebar border-r border-sidebar-border" aria-describedby={undefined}>
+                <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
                 <div className="flex h-14 items-center px-4 border-b border-sidebar-border">
                   <Link
                     href="/"

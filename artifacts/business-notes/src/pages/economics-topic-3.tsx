@@ -90,7 +90,7 @@ export default function EconomicsTopic3() {
           {/* Hero */}
           <div className="mb-10">
             <p className="text-xs font-bold tracking-widest text-secondary uppercase mb-3">Week 3 · Economics</p>
-            <h1 className="text-4xl md:text-5xl font-serif font-bold text-foreground mb-4 leading-tight">Money and Banking</h1>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-foreground mb-4 leading-tight">Money and Banking</h1>
             <p className="text-lg text-muted-foreground leading-relaxed">
               Money is one of the most important inventions in human history — it solved the fundamental problems of barter and made complex, specialised economic life possible. This week covers the origin and evolution of money, its characteristics and functions, how its value is determined (including Irving Fisher's famous <strong>MV = PT</strong> equation), the demand and supply of money, and the roles of both the <strong>Central Bank</strong> and <strong>commercial banks</strong> in the modern economy.
             </p>

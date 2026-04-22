@@ -60,7 +60,7 @@ export default function SocietyTopic1() {
         <div className="flex-1 min-w-0 max-w-3xl" ref={contentRef}>
           <div className="mb-10">
             <p className="text-xs font-bold tracking-widest text-secondary uppercase mb-3">Week 1 · Society &amp; Culture</p>
-            <h1 className="text-4xl md:text-5xl font-serif font-bold text-foreground mb-4 leading-tight">Introduction to Sociology</h1>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-foreground mb-4 leading-tight">Introduction to Sociology</h1>
             <p className="text-lg text-muted-foreground leading-relaxed">Sociology is the scientific study of human society — its structure, institutions, processes, and the behaviour of groups. It emerged as a formal discipline in the 19th century in response to the dramatic social transformations of industrialisation, urbanisation, and political revolution. This week establishes the foundations: what sociology is, what it studies, why it matters, and how it developed.</p>
           </div>
 

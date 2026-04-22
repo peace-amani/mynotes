@@ -47,7 +47,7 @@ export default function SocietyTopic6() {
         <div className="flex-1 min-w-0 max-w-3xl">
           <div className="mb-10">
             <p className="text-xs font-bold tracking-widest text-secondary uppercase mb-3">Week 6 · Society &amp; Culture</p>
-            <h1 className="text-4xl md:text-5xl font-serif font-bold text-foreground mb-4 leading-tight">Social Change</h1>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-foreground mb-4 leading-tight">Social Change</h1>
             <p className="text-lg text-muted-foreground leading-relaxed">No society stands still. Social change — the transformation of culture, social institutions, and social relationships over time — is one of the most fundamental and pervasive features of human social life. Understanding how and why societies change is essential for making sense of the world we live in and for shaping the world we want to build.</p>
           </div>
 

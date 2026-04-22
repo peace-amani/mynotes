@@ -43,7 +43,7 @@ export default function SocietyTopic8() {
         <div className="flex-1 min-w-0 max-w-3xl">
           <div className="mb-10">
             <p className="text-xs font-bold tracking-widest text-secondary uppercase mb-3">Week 8 · Society &amp; Culture</p>
-            <h1 className="text-4xl md:text-5xl font-serif font-bold text-foreground mb-4 leading-tight">Leadership and Group Dynamics</h1>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-foreground mb-4 leading-tight">Leadership and Group Dynamics</h1>
             <p className="text-lg text-muted-foreground leading-relaxed">Understanding how groups form, develop, and are led is fundamental to social life. Whether in classrooms, workplaces, communities, or nations, human beings organise in groups — and those groups are shaped by the attitudes of their members and the quality of their leadership.</p>
           </div>
 

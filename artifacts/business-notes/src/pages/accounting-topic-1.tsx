@@ -147,7 +147,7 @@ export default function AccountingTopic1() {
           {/* Hero */}
           <div className="mb-10">
             <p className="text-xs font-bold tracking-widest text-amber-600 dark:text-amber-400 uppercase mb-3">Accounting — Topic 1</p>
-            <h1 className="text-4xl md:text-5xl font-serif font-bold text-foreground mb-4 leading-tight">Partnership Accounts</h1>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-foreground mb-4 leading-tight">Partnership Accounts</h1>
             <p className="text-lg text-muted-foreground leading-relaxed">
               A partnership arises when two or more people go into business together to share profits and losses. Unlike a sole trader, partners pool their capital, skills, and effort — but also share risk and liability. This topic covers how partnership accounts are structured, how profits are divided, and how to prepare appropriation accounts and partners' current accounts.
             </p>

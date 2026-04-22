@@ -51,7 +51,7 @@ export default function SocietyTopic12() {
         <div className="flex-1 min-w-0 max-w-3xl">
           <div className="mb-10">
             <p className="text-xs font-bold tracking-widest text-secondary uppercase mb-3">Week 12 · Society &amp; Culture</p>
-            <h1 className="text-4xl md:text-5xl font-serif font-bold text-foreground mb-4 leading-tight">Emerging Issues</h1>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-foreground mb-4 leading-tight">Emerging Issues</h1>
             <p className="text-lg text-muted-foreground leading-relaxed">Modern society grapples with a range of complex social issues that cut across individual, family, and community life. This week examines five critical emerging issues in Kenyan society: corruption, marriage, stress, alcohol abuse, and suicide — each analysed from a sociological perspective with attention to causes, effects, and responses.</p>
           </div>
 

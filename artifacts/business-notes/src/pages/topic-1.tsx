@@ -75,16 +75,16 @@ export default function Topic1() {
         />
       </div>
 
-      <div className="container mx-auto max-w-4xl px-4 py-8 md:py-12 flex flex-col md:flex-row gap-8">
+      <div className="container mx-auto max-w-4xl px-4 py-6 sm:py-8 md:py-12 flex flex-col md:flex-row gap-8">
         
         {/* Main Content */}
         <article className="flex-1 min-w-0 prose prose-slate dark:prose-invert prose-headings:font-serif prose-headings:text-foreground prose-p:text-muted-foreground prose-li:text-muted-foreground max-w-none">
           
           <header className="mb-12">
-            <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4 text-foreground">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mb-4 text-foreground">
               Introduction to Management
             </h1>
-            <p className="text-xl text-muted-foreground leading-relaxed">
+            <p className="text-base sm:text-xl text-muted-foreground leading-relaxed">
               Explore the foundational concepts of management, its core functions, and the skills required to be an effective leader in a modern organization.
             </p>
           </header>
@@ -103,7 +103,7 @@ export default function Topic1() {
           </div>
 
           <section id="section-1" className="scroll-mt-24 mb-16">
-            <h2 className="text-3xl font-bold border-b border-border pb-2 mb-6">1. Definition and Meaning of Management</h2>
+            <h2 className="text-2xl sm:text-3xl font-bold border-b border-border pb-2 mb-6">1. Definition and Meaning of Management</h2>
             
             <Card className="my-6 bg-primary/5 border-primary/20 shadow-none">
               <CardContent className="p-6 flex gap-4">
@@ -126,7 +126,7 @@ export default function Topic1() {
           </section>
 
           <section id="section-2" className="scroll-mt-24 mb-16">
-            <h2 className="text-3xl font-bold border-b border-border pb-2 mb-6">2. Is Management an Art or a Science?</h2>
+            <h2 className="text-2xl sm:text-3xl font-bold border-b border-border pb-2 mb-6">2. Is Management an Art or a Science?</h2>
             <p>Management is considered to be both an art and a science.</p>
 
             <div className="grid md:grid-cols-2 gap-6 my-8">
@@ -162,7 +162,7 @@ export default function Topic1() {
           </section>
 
           <section id="section-3" className="scroll-mt-24 mb-16">
-            <h2 className="text-3xl font-bold border-b border-border pb-2 mb-6">3. Characteristics of Management</h2>
+            <h2 className="text-2xl sm:text-3xl font-bold border-b border-border pb-2 mb-6">3. Characteristics of Management</h2>
             <div className="grid sm:grid-cols-2 gap-4">
               {[
                 { title: "Process", desc: "Of planning, organising, staffing, directing and controlling" },
@@ -186,7 +186,7 @@ export default function Topic1() {
           </section>
 
           <section id="section-4" className="scroll-mt-24 mb-16">
-            <h2 className="text-3xl font-bold border-b border-border pb-2 mb-6">4. Functions of Management</h2>
+            <h2 className="text-2xl sm:text-3xl font-bold border-b border-border pb-2 mb-6">4. Functions of Management</h2>
             <p>Five main traditional functions:</p>
             
             <Accordion type="single" collapsible className="w-full mt-6" defaultValue="func-0">
@@ -210,7 +210,7 @@ export default function Topic1() {
           </section>
 
           <section id="section-5" className="scroll-mt-24 mb-16">
-            <h2 className="text-3xl font-bold border-b border-border pb-2 mb-6">5. Management Levels</h2>
+            <h2 className="text-2xl sm:text-3xl font-bold border-b border-border pb-2 mb-6">5. Management Levels</h2>
             <p>Three main decision-making hierarchy levels:</p>
 
             <div className="space-y-8 mt-8">
@@ -271,7 +271,7 @@ export default function Topic1() {
           </section>
 
           <section id="section-6" className="scroll-mt-24 mb-16">
-            <h2 className="text-3xl font-bold border-b border-border pb-2 mb-6">6. Management Skills</h2>
+            <h2 className="text-2xl sm:text-3xl font-bold border-b border-border pb-2 mb-6">6. Management Skills</h2>
             
             <div className="grid sm:grid-cols-2 gap-4 mb-8">
               <Card className="bg-card border-border shadow-sm">
@@ -332,7 +332,7 @@ export default function Topic1() {
           </section>
 
           <section id="section-7" className="scroll-mt-24 mb-16">
-            <h2 className="text-3xl font-bold border-b border-border pb-2 mb-6">7. Managerial Roles (Mintzberg)</h2>
+            <h2 className="text-2xl sm:text-3xl font-bold border-b border-border pb-2 mb-6">7. Managerial Roles (Mintzberg)</h2>
             <p>Henry Mintzberg identified 10 roles grouped into 3 categories:</p>
 
             <div className="space-y-6 mt-6">
@@ -367,7 +367,7 @@ export default function Topic1() {
           </section>
 
           <section id="section-8" className="scroll-mt-24 mb-16">
-            <h2 className="text-3xl font-bold border-b border-border pb-2 mb-6">8. Qualities of a Good Modern Manager</h2>
+            <h2 className="text-2xl sm:text-3xl font-bold border-b border-border pb-2 mb-6">8. Qualities of a Good Modern Manager</h2>
             <div className="grid sm:grid-cols-2 gap-x-6 gap-y-4">
               {[
                 { title: "Knowledge of Organization", desc: "Insight of the organization as a whole, objectives, policies" },

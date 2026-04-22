@@ -395,7 +395,7 @@ export function VoiceReader() {
         style={{
           position: "fixed",
           bottom: 80,
-          right: 24,
+          right: 16,
           zIndex: 9999,
           width: 54,
           height: 54,
@@ -430,9 +430,9 @@ export function VoiceReader() {
           style={{
             position: "fixed",
             bottom: 148,
-            right: 24,
+            right: 16,
             zIndex: 9998,
-            width: 340,
+            width: "min(340px, calc(100vw - 32px))",
             maxHeight: "70vh",
             display: "flex",
             flexDirection: "column",

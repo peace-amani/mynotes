@@ -164,16 +164,16 @@ export default function Home() {
         <meta name="twitter:title" content="Study Notes — Business Management &amp; Economics" />
         <meta name="twitter:image" content="https://notes.xwolf.space/og-home.svg" />
       </Helmet>
-      <div className="container mx-auto max-w-5xl px-4 py-12 md:py-16 space-y-16">
+      <div className="container mx-auto max-w-5xl px-4 py-8 sm:py-12 md:py-16 space-y-16">
 
         {/* Unit 1 */}
         <section>
           <div className="mb-8">
             <h2 className="text-sm font-bold tracking-widest text-secondary uppercase mb-3" data-testid="label-unit1">Unit 1</h2>
-            <h1 className="text-4xl md:text-5xl font-serif font-bold tracking-tight text-foreground mb-4">
+            <h1 className="text-3xl sm:text-3xl sm:text-4xl md:text-5xl font-serif font-bold tracking-tight text-foreground mb-4">
               Business Management
             </h1>
-            <p className="text-lg text-muted-foreground max-w-2xl">
+            <p className="text-base sm:text-lg text-muted-foreground max-w-2xl">
               A comprehensive study guide covering the fundamental principles, theories, and practices of modern business management.
             </p>
           </div>
@@ -217,10 +217,10 @@ export default function Home() {
         <section>
           <div className="mb-8">
             <h2 className="text-sm font-bold tracking-widest text-amber-600 dark:text-amber-400 uppercase mb-3" data-testid="label-accounting">Accounting (ACC 211)</h2>
-            <h1 className="text-4xl md:text-5xl font-serif font-bold tracking-tight text-foreground mb-4">
+            <h1 className="text-3xl sm:text-3xl sm:text-4xl md:text-5xl font-serif font-bold tracking-tight text-foreground mb-4">
               Accounting
             </h1>
-            <p className="text-lg text-muted-foreground max-w-2xl">
+            <p className="text-base sm:text-lg text-muted-foreground max-w-2xl">
               Financial accounting for partnerships and limited companies — covering the preparation of final accounts, appropriation of profits, capital and current accounts, reserves, dividends, and company-specific items such as debentures and corporation tax.
             </p>
           </div>
@@ -264,10 +264,10 @@ export default function Home() {
         <section>
           <div className="mb-8">
             <h2 className="text-sm font-bold tracking-widest text-secondary uppercase mb-3" data-testid="label-unit2">Unit 2</h2>
-            <h1 className="text-4xl md:text-5xl font-serif font-bold tracking-tight text-foreground mb-4">
+            <h1 className="text-3xl sm:text-3xl sm:text-4xl md:text-5xl font-serif font-bold tracking-tight text-foreground mb-4">
               Economics
             </h1>
-            <p className="text-lg text-muted-foreground max-w-2xl">
+            <p className="text-base sm:text-lg text-muted-foreground max-w-2xl">
               An in-depth study of macroeconomic theory, policy, national income, money, and fiscal systems that govern modern economies.
             </p>
           </div>
@@ -311,10 +311,10 @@ export default function Home() {
         <section>
           <div className="mb-8">
             <h2 className="text-sm font-bold tracking-widest text-secondary uppercase mb-3" data-testid="label-unit4">Unit 4</h2>
-            <h1 className="text-4xl md:text-5xl font-serif font-bold tracking-tight text-foreground mb-4">
+            <h1 className="text-3xl sm:text-3xl sm:text-4xl md:text-5xl font-serif font-bold tracking-tight text-foreground mb-4">
               Health Sciences
             </h1>
-            <p className="text-lg text-muted-foreground max-w-2xl">
+            <p className="text-base sm:text-lg text-muted-foreground max-w-2xl">
               A comprehensive study of key public health topics — disease prevention, health promotion, HIV/AIDS, substance abuse, hygiene, and lifestyle diseases — with a focus on the Kenyan health context. (UCCC 1102)
             </p>
           </div>
@@ -358,10 +358,10 @@ export default function Home() {
         <section>
           <div className="mb-8">
             <h2 className="text-sm font-bold tracking-widest text-secondary uppercase mb-3" data-testid="label-unit5">Unit 5</h2>
-            <h1 className="text-4xl md:text-5xl font-serif font-bold tracking-tight text-foreground mb-4">
+            <h1 className="text-3xl sm:text-3xl sm:text-4xl md:text-5xl font-serif font-bold tracking-tight text-foreground mb-4">
               ICT — Computer Applications
             </h1>
-            <p className="text-lg text-muted-foreground max-w-2xl">
+            <p className="text-base sm:text-lg text-muted-foreground max-w-2xl">
               Comprehensive, exam-ready notes on Microsoft Word and Microsoft Excel — covering every feature, function, and keyboard shortcut you need for your CAT.
             </p>
           </div>
@@ -405,10 +405,10 @@ export default function Home() {
         <section>
           <div className="mb-8">
             <h2 className="text-sm font-bold tracking-widest text-secondary uppercase mb-3" data-testid="label-unit3">Unit 3</h2>
-            <h1 className="text-4xl md:text-5xl font-serif font-bold tracking-tight text-foreground mb-4">
+            <h1 className="text-3xl sm:text-3xl sm:text-4xl md:text-5xl font-serif font-bold tracking-tight text-foreground mb-4">
               Society &amp; Culture
             </h1>
-            <p className="text-lg text-muted-foreground max-w-2xl">
+            <p className="text-base sm:text-lg text-muted-foreground max-w-2xl">
               An exploration of how human societies are formed, how individuals are shaped by socialization, and how culture — its symbols, language, values, and norms — defines what it means to be human. (UCCC 1103)
             </p>
           </div>

@@ -48,7 +48,7 @@ export default function SocietyTopic3() {
         <div className="flex-1 min-w-0 max-w-3xl">
           <div className="mb-10">
             <p className="text-xs font-bold tracking-widest text-secondary uppercase mb-3">Week 3 · Society &amp; Culture</p>
-            <h1 className="text-4xl md:text-5xl font-serif font-bold text-foreground mb-4 leading-tight">Urban and Rural Community</h1>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-foreground mb-4 leading-tight">Urban and Rural Community</h1>
             <p className="text-lg text-muted-foreground leading-relaxed">The distinction between rural and urban communities is one of the most important in sociology — these two environments produce profoundly different patterns of social life, economic organisation, and human experience. The movement from rural to urban areas (rural-urban migration) is one of the defining social processes of the modern world, including Kenya.</p>
           </div>
 

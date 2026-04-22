@@ -114,7 +114,7 @@ export default function SocietyTopic2() {
           {/* Hero */}
           <div className="mb-10">
             <p className="text-xs font-bold tracking-widest text-secondary uppercase mb-3">Week 2 · Society &amp; Culture</p>
-            <h1 className="text-4xl md:text-5xl font-serif font-bold text-foreground mb-4 leading-tight">Society: Meaning, Origins &amp; Characteristics</h1>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-foreground mb-4 leading-tight">Society: Meaning, Origins &amp; Characteristics</h1>
             <p className="text-lg text-muted-foreground leading-relaxed">
               "Society" is the most fundamental concept in sociology — yet also one of the most vague. This week we examine what society truly means, how different scholars have defined it, the competing theories about how it came into existence, and the core characteristics that define every human society from the smallest village to the modern nation-state.
             </p>

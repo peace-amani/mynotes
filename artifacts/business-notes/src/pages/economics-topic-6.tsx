@@ -119,7 +119,7 @@ export default function EconomicsTopic6() {
           {/* Hero */}
           <div className="mb-10">
             <p className="text-xs font-bold tracking-widest text-secondary uppercase mb-3">Unit 2 — Economics</p>
-            <h1 className="text-4xl md:text-5xl font-serif font-bold text-foreground mb-4 leading-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-foreground mb-4 leading-tight">
               Circular Flow of Income &amp; Development of Macroeconomic Theory
             </h1>
             <p className="text-lg text-muted-foreground leading-relaxed">

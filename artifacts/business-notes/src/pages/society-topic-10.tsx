@@ -48,7 +48,7 @@ export default function SocietyTopic10() {
         <div className="flex-1 min-w-0 max-w-3xl">
           <div className="mb-10">
             <p className="text-xs font-bold tracking-widest text-secondary uppercase mb-3">Week 10 · Society &amp; Culture</p>
-            <h1 className="text-4xl md:text-5xl font-serif font-bold text-foreground mb-4 leading-tight">Human Rights</h1>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-foreground mb-4 leading-tight">Human Rights</h1>
             <p className="text-lg text-muted-foreground leading-relaxed">Human rights are the fundamental rights and freedoms to which all human beings are entitled — regardless of their race, sex, nationality, ethnicity, language, religion, or any other status. They are not granted by governments; they are inherent in human dignity and can only be protected or violated, never truly given or taken away. This week examines individual rights, citizen rights, and the critical issue of gender.</p>
           </div>
 

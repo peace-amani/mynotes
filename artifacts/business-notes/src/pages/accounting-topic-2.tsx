@@ -107,7 +107,7 @@ export default function AccountingTopic2() {
           {/* Hero */}
           <div className="mb-10">
             <p className="text-xs font-bold tracking-widest text-amber-600 dark:text-amber-400 uppercase mb-3">Accounting — Topic 2</p>
-            <h1 className="text-4xl md:text-5xl font-serif font-bold text-foreground mb-4 leading-tight">Company Final Accounts</h1>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-foreground mb-4 leading-tight">Company Final Accounts</h1>
             <p className="text-lg text-muted-foreground leading-relaxed">
               A limited company is a legal entity separate from its owners (shareholders). Its final accounts follow the same basic structure as a sole trader — Trading Account, Profit &amp; Loss Account — but include additional items unique to companies: directors' fees, audit fees, debenture interest, corporation tax, dividends, and an appropriation account showing how profit is distributed. The balance sheet also includes share capital and reserves.
             </p>

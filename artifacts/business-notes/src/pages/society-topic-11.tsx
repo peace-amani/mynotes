@@ -45,7 +45,7 @@ export default function SocietyTopic11() {
         <div className="flex-1 min-w-0 max-w-3xl">
           <div className="mb-10">
             <p className="text-xs font-bold tracking-widest text-secondary uppercase mb-3">Week 11 · Society &amp; Culture</p>
-            <h1 className="text-4xl md:text-5xl font-serif font-bold text-foreground mb-4 leading-tight">Civil Education</h1>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-foreground mb-4 leading-tight">Civil Education</h1>
             <p className="text-lg text-muted-foreground leading-relaxed">Civil (or civic) education is the foundation of informed, active citizenship. It equips Kenyans to understand the structure of their government, know their rights and responsibilities, participate meaningfully in democratic processes, and hold their leaders accountable. This week covers Kenya's governmental structure, the division between national and county government, and the nature and history of constitutionalism in Kenya.</p>
           </div>
 

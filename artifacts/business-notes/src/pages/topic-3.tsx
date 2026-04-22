@@ -120,7 +120,7 @@ export default function Topic3() {
           {/* Hero */}
           <div className="mb-10">
             <p className="text-xs font-bold tracking-widest text-secondary uppercase mb-3">Unit 1 — Business Management</p>
-            <h1 className="text-4xl md:text-5xl font-serif font-bold text-foreground mb-4 leading-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-foreground mb-4 leading-tight">
               Evolution of Management Thought
             </h1>
             <p className="text-lg text-muted-foreground leading-relaxed">

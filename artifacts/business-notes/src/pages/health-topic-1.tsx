@@ -78,7 +78,7 @@ export default function HealthTopic1() {
 
           <div className="mb-10">
             <p className="text-xs font-bold tracking-widest text-secondary uppercase mb-3">Unit 4 · Health Sciences</p>
-            <h1 className="text-4xl md:text-5xl font-serif font-bold text-foreground mb-4 leading-tight">HIV Prevention Strategies</h1>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-foreground mb-4 leading-tight">HIV Prevention Strategies</h1>
             <p className="text-lg text-muted-foreground leading-relaxed">
               HIV (Human Immunodeficiency Virus) remains one of the most significant public health challenges globally and in Kenya. These notes cover what HIV and AIDS are, how the infection progresses, how it is transmitted and diagnosed, and — most importantly — the full range of prevention strategies from behaviour change to biomedical interventions and social policy. Treatment options and Kenya's ART programme are also covered in detail.
             </p>

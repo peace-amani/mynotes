@@ -107,7 +107,7 @@ export default function HealthTopic2() {
 
           <div className="mb-10">
             <p className="text-xs font-bold tracking-widest text-secondary uppercase mb-3">Unit 4 · Health Sciences (UCCC 1102-05)</p>
-            <h1 className="text-4xl md:text-5xl font-serif font-bold text-foreground mb-4 leading-tight">Drug and Substance Abuse</h1>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-foreground mb-4 leading-tight">Drug and Substance Abuse</h1>
             <p className="text-lg text-muted-foreground leading-relaxed">
               Drug abuse is one of the most complex and damaging public health challenges affecting individuals, families, and societies. These notes provide a comprehensive examination of drug abuse — its definitions, the science of addiction, a detailed study of the most commonly abused substances, how to recognise signs of abuse and addiction, the consequences, treatment and rehabilitation options, and Kenya's government policy framework for addressing the problem.
             </p>

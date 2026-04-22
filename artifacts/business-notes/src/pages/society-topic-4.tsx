@@ -116,7 +116,7 @@ export default function SocietyTopic4() {
           {/* Hero */}
           <div className="mb-10">
             <p className="text-xs font-bold tracking-widest text-secondary uppercase mb-3">Week 4 · Society &amp; Culture</p>
-            <h1 className="text-4xl md:text-5xl font-serif font-bold text-foreground mb-4 leading-tight">Socialization</h1>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-foreground mb-4 leading-tight">Socialization</h1>
             <p className="text-lg text-muted-foreground leading-relaxed">
               How do we become human? We are born with biology — but we become social beings through socialization. This week examines the lifelong process through which individuals learn the norms, values, language, and social skills that allow them to function as members of society. Without socialization, as the case of Daniella shows, even the most basic human capacities fail to develop.
             </p>
