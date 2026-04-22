@@ -1,8 +1,10 @@
+import { useState } from "react";
 import { Link, useLocation } from "wouter";
-import { BookOpen, ChevronRight, Moon, Sun, Library, TrendingUp, Globe, HeartPulse, Monitor, Calculator } from "lucide-react";
+import { BookOpen, ChevronRight, Moon, Sun, Library, TrendingUp, Globe, HeartPulse, Monitor, Calculator, Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useTheme } from "@/components/theme-provider";
 import { ScrollArea } from "@/components/ui/scroll-area";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { AnnotationEngine } from "@/components/annotation-engine";
 import { VoiceReader } from "@/components/voice-reader";
 
@@ -11,64 +13,317 @@ interface LayoutProps {
   breadcrumbs?: { label: string; href?: string }[];
 }
 
+const unit1Topics = [
+  { id: 1, title: "Introduction to Management", available: true },
+  { id: 2, title: "Forms of Business Organizations", available: true },
+  { id: 3, title: "Evolution of Management Thought", available: true },
+  { id: 4, title: "Planning", available: false },
+  { id: 5, title: "Organizing", available: false },
+];
+
+const unit2Topics = [
+  { id: 1, title: "Introduction to Macroeconomics", available: true },
+  { id: 2, title: "National Income", available: true },
+  { id: 3, title: "Money and Banking", available: true },
+  { id: 4, title: "Fiscal Policy", available: false },
+  { id: 5, title: "Classical & Keynesian Theories", available: true },
+  { id: 6, title: "Circular Flow & Macro Theory", available: true },
+];
+
+const unit4Topics = [
+  { id: 1, title: "Introduction to Health Education", available: true },
+  { id: 2, title: "HIV Prevention Strategies", available: true },
+  { id: 3, title: "Drug and Substance Abuse", available: true },
+  { id: 4, title: "Hygiene, Sanitation & Safety", available: true },
+  { id: 5, title: "Lifestyle Diseases", available: false },
+  { id: 6, title: "Communicable Diseases", available: false },
+];
+
+const unit5Topics = [
+  { id: 1, title: "Microsoft Word", available: true },
+  { id: 2, title: "Microsoft Excel", available: true },
+];
+
+const accountingTopics = [
+  { id: 1, title: "Partnership Accounts", available: true },
+  { id: 2, title: "Company Final Accounts", available: true },
+  { id: 3, title: "Control Accounts & Incomplete Records", available: true },
+];
+
+const unit3Topics = [
+  { id: 1, title: "Introduction to Sociology", available: true },
+  { id: 2, title: "Society", available: true },
+  { id: 3, title: "Urban & Rural Community", available: true },
+  { id: 4, title: "Socialization", available: true },
+  { id: 5, title: "Culture", available: true },
+  { id: 6, title: "Social Change", available: true },
+  { id: 8, title: "Leadership & Group Dynamics", available: true },
+  { id: 9, title: "Social Processes", available: true },
+  { id: 10, title: "Human Rights", available: true },
+  { id: 11, title: "Civil Education", available: true },
+  { id: 12, title: "Emerging Issues", available: true },
+];
+
+interface SidebarNavProps {
+  location: string;
+  onNavigate?: () => void;
+}
+
+function SidebarNav({ location, onNavigate }: SidebarNavProps) {
+  return (
+    <ScrollArea className="flex-1 py-4">
+      {/* Unit 1 */}
+      <div className="px-4 mb-2">
+        <Link href="/" onClick={onNavigate} className="block">
+          <h2 className="text-xs font-bold tracking-wider text-muted-foreground uppercase hover:text-foreground transition-colors">
+            Unit 1 — Business Mgmt
+          </h2>
+        </Link>
+      </div>
+      <nav className="space-y-1 px-2 mb-6">
+        {unit1Topics.map((topic) => {
+          const isActive = location === `/topic/${topic.id}`;
+          if (!topic.available) {
+            return (
+              <div
+                key={topic.id}
+                className="flex items-center gap-3 rounded-md px-3 py-2 text-sm opacity-40 cursor-not-allowed"
+                title="Coming soon"
+              >
+                <BookOpen className="h-4 w-4 shrink-0" />
+                <span className="truncate">Topic {topic.id}: {topic.title}</span>
+              </div>
+            );
+          }
+          return (
+            <Link
+              key={topic.id}
+              href={`/topic/${topic.id}`}
+              onClick={onNavigate}
+              className={`flex items-center gap-3 rounded-md px-3 py-2 text-sm transition-colors ${
+                isActive
+                  ? "bg-sidebar-accent text-sidebar-accent-foreground font-medium"
+                  : "text-sidebar-foreground/70 hover:bg-sidebar-accent/50 hover:text-sidebar-foreground"
+              }`}
+              data-testid={`nav-unit1-topic-${topic.id}`}
+            >
+              <BookOpen className="h-4 w-4 shrink-0" />
+              <span className="truncate">Topic {topic.id}: {topic.title}</span>
+            </Link>
+          );
+        })}
+      </nav>
+
+      {/* Unit 2 */}
+      <div className="px-4 mb-2">
+        <Link href="/unit/2" onClick={onNavigate}>
+          <h2 className="text-xs font-bold tracking-wider text-muted-foreground uppercase hover:text-foreground transition-colors">
+            Unit 2 — Economics
+          </h2>
+        </Link>
+      </div>
+      <nav className="space-y-1 px-2 mb-6">
+        {unit2Topics.map((topic) => {
+          const isActive = location === `/economics/${topic.id}`;
+          if (!topic.available) {
+            return (
+              <div
+                key={topic.id}
+                className="flex items-center gap-3 rounded-md px-3 py-2 text-sm opacity-40 cursor-not-allowed"
+                title="Coming soon"
+              >
+                <TrendingUp className="h-4 w-4 shrink-0" />
+                <span className="truncate">Week {topic.id}: {topic.title}</span>
+              </div>
+            );
+          }
+          return (
+            <Link
+              key={topic.id}
+              href={`/economics/${topic.id}`}
+              onClick={onNavigate}
+              className={`flex items-center gap-3 rounded-md px-3 py-2 text-sm transition-colors ${
+                isActive
+                  ? "bg-sidebar-accent text-sidebar-accent-foreground font-medium"
+                  : "text-sidebar-foreground/70 hover:bg-sidebar-accent/50 hover:text-sidebar-foreground"
+              }`}
+              data-testid={`nav-unit2-topic-${topic.id}`}
+            >
+              <TrendingUp className="h-4 w-4 shrink-0" />
+              <span className="truncate">Week {topic.id}: {topic.title}</span>
+            </Link>
+          );
+        })}
+      </nav>
+
+      {/* Unit 3 */}
+      <div className="px-4 mb-2">
+        <Link href="/" onClick={onNavigate}>
+          <h2 className="text-xs font-bold tracking-wider text-muted-foreground uppercase hover:text-foreground transition-colors">
+            Unit 3 — Society &amp; Culture
+          </h2>
+        </Link>
+      </div>
+      <nav className="space-y-1 px-2 mb-6">
+        {unit3Topics.map((topic) => {
+          const isActive = location === `/society/${topic.id}`;
+          if (!topic.available) {
+            return (
+              <div
+                key={topic.id}
+                className="flex items-center gap-3 rounded-md px-3 py-2 text-sm opacity-40 cursor-not-allowed"
+                title="Coming soon"
+              >
+                <Globe className="h-4 w-4 shrink-0" />
+                <span className="truncate">Week {topic.id}: {topic.title}</span>
+              </div>
+            );
+          }
+          return (
+            <Link
+              key={topic.id}
+              href={`/society/${topic.id}`}
+              onClick={onNavigate}
+              className={`flex items-center gap-3 rounded-md px-3 py-2 text-sm transition-colors ${
+                isActive
+                  ? "bg-sidebar-accent text-sidebar-accent-foreground font-medium"
+                  : "text-sidebar-foreground/70 hover:bg-sidebar-accent/50 hover:text-sidebar-foreground"
+              }`}
+              data-testid={`nav-unit3-topic-${topic.id}`}
+            >
+              <Globe className="h-4 w-4 shrink-0" />
+              <span className="truncate">Week {topic.id}: {topic.title}</span>
+            </Link>
+          );
+        })}
+      </nav>
+
+      {/* Unit 4 */}
+      <div className="px-4 pb-2">
+        <Link href="/" onClick={onNavigate}>
+          <h2 className="text-xs font-bold tracking-wider text-muted-foreground uppercase hover:text-foreground transition-colors">
+            Unit 4 — Health Sciences
+          </h2>
+        </Link>
+      </div>
+      <nav className="space-y-1 px-2 mb-6">
+        {unit4Topics.map((topic) => {
+          const isActive = location === `/health/${topic.id}`;
+          if (!topic.available) {
+            return (
+              <div
+                key={topic.id}
+                className="flex items-center gap-3 rounded-md px-3 py-2 text-sm opacity-40 cursor-not-allowed"
+                title="Coming soon"
+              >
+                <HeartPulse className="h-4 w-4 shrink-0" />
+                <span className="truncate">{topic.title}</span>
+              </div>
+            );
+          }
+          return (
+            <Link
+              key={topic.id}
+              href={`/health/${topic.id}`}
+              onClick={onNavigate}
+              className={`flex items-center gap-3 rounded-md px-3 py-2 text-sm transition-colors ${
+                isActive
+                  ? "bg-sidebar-accent text-sidebar-accent-foreground font-medium"
+                  : "text-sidebar-foreground/70 hover:bg-sidebar-accent/50 hover:text-sidebar-foreground"
+              }`}
+              data-testid={`nav-unit4-topic-${topic.id}`}
+            >
+              <HeartPulse className="h-4 w-4 shrink-0" />
+              <span className="truncate">{topic.title}</span>
+            </Link>
+          );
+        })}
+      </nav>
+
+      {/* Unit 5 */}
+      <div className="px-4 pb-2">
+        <Link href="/" onClick={onNavigate}>
+          <h2 className="text-xs font-bold tracking-wider text-muted-foreground uppercase hover:text-foreground transition-colors">
+            Unit 5 — ICT
+          </h2>
+        </Link>
+      </div>
+      <nav className="space-y-1 px-2 mb-6">
+        {unit5Topics.map((topic) => {
+          const isActive = location === `/ict/${topic.id}`;
+          return (
+            <Link
+              key={topic.id}
+              href={`/ict/${topic.id}`}
+              onClick={onNavigate}
+              className={`flex items-center gap-3 rounded-md px-3 py-2 text-sm transition-colors ${
+                isActive
+                  ? "bg-sidebar-accent text-sidebar-accent-foreground font-medium"
+                  : "text-sidebar-foreground/70 hover:bg-sidebar-accent/50 hover:text-sidebar-foreground"
+              }`}
+              data-testid={`nav-unit5-topic-${topic.id}`}
+            >
+              <Monitor className="h-4 w-4 shrink-0" />
+              <span className="truncate">{topic.title}</span>
+            </Link>
+          );
+        })}
+      </nav>
+
+      {/* Unit 6 — Accounting */}
+      <div className="px-4 pb-2">
+        <Link href="/" onClick={onNavigate}>
+          <h2 className="text-xs font-bold tracking-wider text-muted-foreground uppercase hover:text-foreground transition-colors">
+            Unit 6 — Accounting
+          </h2>
+        </Link>
+      </div>
+      <nav className="space-y-1 px-2">
+        {accountingTopics.map((topic) => {
+          const isActive = location === `/accounting/${topic.id}`;
+          return (
+            <Link
+              key={topic.id}
+              href={`/accounting/${topic.id}`}
+              onClick={onNavigate}
+              className={`flex items-center gap-3 rounded-md px-3 py-2 text-sm transition-colors ${
+                isActive
+                  ? "bg-sidebar-accent text-sidebar-accent-foreground font-medium"
+                  : "text-sidebar-foreground/70 hover:bg-sidebar-accent/50 hover:text-sidebar-foreground"
+              }`}
+              data-testid={`nav-accounting-topic-${topic.id}`}
+            >
+              <Calculator className="h-4 w-4 shrink-0" />
+              <span className="truncate">Topic {topic.id}: {topic.title}</span>
+            </Link>
+          );
+        })}
+      </nav>
+    </ScrollArea>
+  );
+}
+
 export function Layout({ children, breadcrumbs }: LayoutProps) {
   const { theme, setTheme } = useTheme();
   const [location] = useLocation();
+  const [mobileOpen, setMobileOpen] = useState(false);
 
-  const unit1Topics = [
-    { id: 1, title: "Introduction to Management", available: true },
-    { id: 2, title: "Forms of Business Organizations", available: true },
-    { id: 3, title: "Evolution of Management Thought", available: true },
-    { id: 4, title: "Planning", available: false },
-    { id: 5, title: "Organizing", available: false },
-  ];
-
-  const unit2Topics = [
-    { id: 1, title: "Introduction to Macroeconomics", available: true },
-    { id: 2, title: "National Income", available: true },
-    { id: 3, title: "Money and Banking", available: true },
-    { id: 4, title: "Fiscal Policy", available: false },
-    { id: 5, title: "Classical & Keynesian Theories", available: true },
-    { id: 6, title: "Circular Flow & Macro Theory", available: true },
-  ];
-
-  const unit4Topics = [
-    { id: 1, title: "Introduction to Health Education", available: true },
-    { id: 2, title: "HIV Prevention Strategies", available: true },
-    { id: 3, title: "Drug and Substance Abuse", available: true },
-    { id: 4, title: "Hygiene, Sanitation & Safety", available: true },
-    { id: 5, title: "Lifestyle Diseases", available: false },
-    { id: 6, title: "Communicable Diseases", available: false },
-  ];
-
-  const unit5Topics = [
-    { id: 1, title: "Microsoft Word", available: true },
-    { id: 2, title: "Microsoft Excel", available: true },
-  ];
-
-  const accountingTopics = [
-    { id: 1, title: "Partnership Accounts", available: true },
-    { id: 2, title: "Company Final Accounts", available: true },
-    { id: 3, title: "Control Accounts & Incomplete Records", available: true },
-  ];
-
-  const unit3Topics = [
-    { id: 1, title: "Introduction to Sociology", available: true },
-    { id: 2, title: "Society", available: true },
-    { id: 3, title: "Urban & Rural Community", available: true },
-    { id: 4, title: "Socialization", available: true },
-    { id: 5, title: "Culture", available: true },
-    { id: 6, title: "Social Change", available: true },
-    { id: 8, title: "Leadership & Group Dynamics", available: true },
-    { id: 9, title: "Social Processes", available: true },
-    { id: 10, title: "Human Rights", available: true },
-    { id: 11, title: "Civil Education", available: true },
-    { id: 12, title: "Emerging Issues", available: true },
-  ];
+  const ThemeToggleButton = ({ className = "" }: { className?: string }) => (
+    <Button
+      variant="ghost"
+      size="sm"
+      className={`gap-2 text-muted-foreground hover:text-foreground ${className}`}
+      onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+      data-testid="btn-toggle-theme"
+    >
+      {theme === "dark" ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
+      <span className="hidden sm:inline">{theme === "dark" ? "Light Mode" : "Dark Mode"}</span>
+    </Button>
+  );
 
   return (
     <div className="flex min-h-screen w-full bg-background">
-      {/* Sidebar */}
+      {/* Desktop Sidebar */}
       <aside className="fixed top-0 left-0 z-30 hidden h-screen w-64 flex-col border-r border-border bg-sidebar md:flex">
         <div className="flex h-14 items-center px-4 py-4 border-b border-sidebar-border">
           <Link href="/" className="flex items-center gap-2 font-serif font-bold text-lg text-sidebar-foreground transition-opacity hover:opacity-80">
@@ -77,228 +332,7 @@ export function Layout({ children, breadcrumbs }: LayoutProps) {
           </Link>
         </div>
 
-        <ScrollArea className="flex-1 py-4">
-          {/* Unit 1 */}
-          <div className="px-4 mb-2">
-            <Link href="/" className="block">
-              <h2 className="text-xs font-bold tracking-wider text-muted-foreground uppercase hover:text-foreground transition-colors">
-                Unit 1 — Business Mgmt
-              </h2>
-            </Link>
-          </div>
-          <nav className="space-y-1 px-2 mb-6">
-            {unit1Topics.map((topic) => {
-              const isActive = location === `/topic/${topic.id}`;
-              if (!topic.available) {
-                return (
-                  <div
-                    key={topic.id}
-                    className="flex items-center gap-3 rounded-md px-3 py-2 text-sm opacity-40 cursor-not-allowed"
-                    title="Coming soon"
-                  >
-                    <BookOpen className="h-4 w-4 shrink-0" />
-                    <span className="truncate">Topic {topic.id}: {topic.title}</span>
-                  </div>
-                );
-              }
-              return (
-                <Link
-                  key={topic.id}
-                  href={`/topic/${topic.id}`}
-                  className={`flex items-center gap-3 rounded-md px-3 py-2 text-sm transition-colors ${
-                    isActive
-                      ? "bg-sidebar-accent text-sidebar-accent-foreground font-medium"
-                      : "text-sidebar-foreground/70 hover:bg-sidebar-accent/50 hover:text-sidebar-foreground"
-                  }`}
-                  data-testid={`nav-unit1-topic-${topic.id}`}
-                >
-                  <BookOpen className="h-4 w-4 shrink-0" />
-                  <span className="truncate">Topic {topic.id}: {topic.title}</span>
-                </Link>
-              );
-            })}
-          </nav>
-
-          {/* Unit 2 */}
-          <div className="px-4 mb-2">
-            <Link href="/unit/2">
-              <h2 className="text-xs font-bold tracking-wider text-muted-foreground uppercase hover:text-foreground transition-colors">
-                Unit 2 — Economics
-              </h2>
-            </Link>
-          </div>
-          <nav className="space-y-1 px-2 mb-6">
-            {unit2Topics.map((topic) => {
-              const isActive = location === `/economics/${topic.id}`;
-              if (!topic.available) {
-                return (
-                  <div
-                    key={topic.id}
-                    className="flex items-center gap-3 rounded-md px-3 py-2 text-sm opacity-40 cursor-not-allowed"
-                    title="Coming soon"
-                  >
-                    <TrendingUp className="h-4 w-4 shrink-0" />
-                    <span className="truncate">Week {topic.id}: {topic.title}</span>
-                  </div>
-                );
-              }
-              return (
-                <Link
-                  key={topic.id}
-                  href={`/economics/${topic.id}`}
-                  className={`flex items-center gap-3 rounded-md px-3 py-2 text-sm transition-colors ${
-                    isActive
-                      ? "bg-sidebar-accent text-sidebar-accent-foreground font-medium"
-                      : "text-sidebar-foreground/70 hover:bg-sidebar-accent/50 hover:text-sidebar-foreground"
-                  }`}
-                  data-testid={`nav-unit2-topic-${topic.id}`}
-                >
-                  <TrendingUp className="h-4 w-4 shrink-0" />
-                  <span className="truncate">Week {topic.id}: {topic.title}</span>
-                </Link>
-              );
-            })}
-          </nav>
-
-          {/* Unit 3 */}
-          <div className="px-4 mb-2">
-            <Link href="/">
-              <h2 className="text-xs font-bold tracking-wider text-muted-foreground uppercase hover:text-foreground transition-colors">
-                Unit 3 — Society &amp; Culture
-              </h2>
-            </Link>
-          </div>
-          <nav className="space-y-1 px-2">
-            {unit3Topics.map((topic) => {
-              const isActive = location === `/society/${topic.id}`;
-              if (!topic.available) {
-                return (
-                  <div
-                    key={topic.id}
-                    className="flex items-center gap-3 rounded-md px-3 py-2 text-sm opacity-40 cursor-not-allowed"
-                    title="Coming soon"
-                  >
-                    <Globe className="h-4 w-4 shrink-0" />
-                    <span className="truncate">Week {topic.id}: {topic.title}</span>
-                  </div>
-                );
-              }
-              return (
-                <Link
-                  key={topic.id}
-                  href={`/society/${topic.id}`}
-                  className={`flex items-center gap-3 rounded-md px-3 py-2 text-sm transition-colors ${
-                    isActive
-                      ? "bg-sidebar-accent text-sidebar-accent-foreground font-medium"
-                      : "text-sidebar-foreground/70 hover:bg-sidebar-accent/50 hover:text-sidebar-foreground"
-                  }`}
-                  data-testid={`nav-unit3-topic-${topic.id}`}
-                >
-                  <Globe className="h-4 w-4 shrink-0" />
-                  <span className="truncate">Week {topic.id}: {topic.title}</span>
-                </Link>
-              );
-            })}
-          </nav>
-
-          {/* Unit 4 */}
-          <div className="px-4 pt-6 pb-2">
-            <Link href="/">
-              <h2 className="text-xs font-bold tracking-wider text-muted-foreground uppercase hover:text-foreground transition-colors">
-                Unit 4 — Health Sciences
-              </h2>
-            </Link>
-          </div>
-          <nav className="space-y-1 px-2">
-            {unit4Topics.map((topic) => {
-              const isActive = location === `/health/${topic.id}`;
-              if (!topic.available) {
-                return (
-                  <div
-                    key={topic.id}
-                    className="flex items-center gap-3 rounded-md px-3 py-2 text-sm opacity-40 cursor-not-allowed"
-                    title="Coming soon"
-                  >
-                    <HeartPulse className="h-4 w-4 shrink-0" />
-                    <span className="truncate">{topic.title}</span>
-                  </div>
-                );
-              }
-              return (
-                <Link
-                  key={topic.id}
-                  href={`/health/${topic.id}`}
-                  className={`flex items-center gap-3 rounded-md px-3 py-2 text-sm transition-colors ${
-                    isActive
-                      ? "bg-sidebar-accent text-sidebar-accent-foreground font-medium"
-                      : "text-sidebar-foreground/70 hover:bg-sidebar-accent/50 hover:text-sidebar-foreground"
-                  }`}
-                  data-testid={`nav-unit4-topic-${topic.id}`}
-                >
-                  <HeartPulse className="h-4 w-4 shrink-0" />
-                  <span className="truncate">{topic.title}</span>
-                </Link>
-              );
-            })}
-          </nav>
-
-          {/* Unit 5 */}
-          <div className="px-4 pt-6 pb-2">
-            <Link href="/">
-              <h2 className="text-xs font-bold tracking-wider text-muted-foreground uppercase hover:text-foreground transition-colors">
-                Unit 5 — ICT
-              </h2>
-            </Link>
-          </div>
-          <nav className="space-y-1 px-2">
-            {unit5Topics.map((topic) => {
-              const isActive = location === `/ict/${topic.id}`;
-              return (
-                <Link
-                  key={topic.id}
-                  href={`/ict/${topic.id}`}
-                  className={`flex items-center gap-3 rounded-md px-3 py-2 text-sm transition-colors ${
-                    isActive
-                      ? "bg-sidebar-accent text-sidebar-accent-foreground font-medium"
-                      : "text-sidebar-foreground/70 hover:bg-sidebar-accent/50 hover:text-sidebar-foreground"
-                  }`}
-                  data-testid={`nav-unit5-topic-${topic.id}`}
-                >
-                  <Monitor className="h-4 w-4 shrink-0" />
-                  <span className="truncate">{topic.title}</span>
-                </Link>
-              );
-            })}
-          </nav>
-          {/* Unit 6 — Accounting */}
-          <div className="px-4 pt-6 pb-2">
-            <Link href="/">
-              <h2 className="text-xs font-bold tracking-wider text-muted-foreground uppercase hover:text-foreground transition-colors">
-                Unit 6 — Accounting
-              </h2>
-            </Link>
-          </div>
-          <nav className="space-y-1 px-2">
-            {accountingTopics.map((topic) => {
-              const isActive = location === `/accounting/${topic.id}`;
-              return (
-                <Link
-                  key={topic.id}
-                  href={`/accounting/${topic.id}`}
-                  className={`flex items-center gap-3 rounded-md px-3 py-2 text-sm transition-colors ${
-                    isActive
-                      ? "bg-sidebar-accent text-sidebar-accent-foreground font-medium"
-                      : "text-sidebar-foreground/70 hover:bg-sidebar-accent/50 hover:text-sidebar-foreground"
-                  }`}
-                  data-testid={`nav-accounting-topic-${topic.id}`}
-                >
-                  <Calculator className="h-4 w-4 shrink-0" />
-                  <span className="truncate">Topic {topic.id}: {topic.title}</span>
-                </Link>
-              );
-            })}
-          </nav>
-        </ScrollArea>
+        <SidebarNav location={location} />
 
         <div className="p-4 border-t border-sidebar-border">
           <Button
@@ -317,22 +351,71 @@ export function Layout({ children, breadcrumbs }: LayoutProps) {
       {/* Main Content */}
       <main className="flex-1 md:pl-64 flex flex-col">
         {/* Topbar */}
-        <header className="sticky top-0 z-20 flex h-14 items-center gap-4 border-b border-border bg-background/80 px-4 backdrop-blur-md sm:px-6">
-          <div className="flex flex-1 items-center gap-2 text-sm text-muted-foreground">
+        <header className="sticky top-0 z-20 flex h-14 items-center gap-2 border-b border-border bg-background/80 px-4 backdrop-blur-md sm:px-6">
+          {/* Mobile: hamburger + logo */}
+          <div className="flex items-center gap-2 md:hidden">
+            <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
+              <SheetTrigger asChild>
+                <Button variant="ghost" size="icon" aria-label="Open navigation menu">
+                  <Menu className="h-5 w-5" />
+                </Button>
+              </SheetTrigger>
+              <SheetContent side="left" className="w-72 p-0 flex flex-col bg-sidebar border-r border-sidebar-border">
+                <div className="flex h-14 items-center px-4 border-b border-sidebar-border">
+                  <Link
+                    href="/"
+                    onClick={() => setMobileOpen(false)}
+                    className="flex items-center gap-2 font-serif font-bold text-lg text-sidebar-foreground"
+                  >
+                    <Library className="h-5 w-5 text-primary" />
+                    <span>Study Notes</span>
+                  </Link>
+                </div>
+
+                <SidebarNav location={location} onNavigate={() => setMobileOpen(false)} />
+
+                <div className="p-4 border-t border-sidebar-border">
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    className="w-full justify-start gap-2 text-muted-foreground hover:text-foreground"
+                    onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+                    data-testid="btn-toggle-theme-mobile"
+                  >
+                    {theme === "dark" ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
+                    {theme === "dark" ? "Light Mode" : "Dark Mode"}
+                  </Button>
+                </div>
+              </SheetContent>
+            </Sheet>
+
+            <Link href="/" className="flex items-center gap-1.5 font-serif font-bold text-base text-foreground">
+              <Library className="h-4 w-4 text-primary" />
+              <span>Study Notes</span>
+            </Link>
+          </div>
+
+          {/* Breadcrumbs */}
+          <div className="flex flex-1 items-center gap-2 text-sm text-muted-foreground min-w-0">
             {breadcrumbs && breadcrumbs.map((crumb, index) => (
-              <div key={index} className="flex items-center gap-2">
+              <div key={index} className="flex items-center gap-2 min-w-0">
                 {crumb.href ? (
-                  <Link href={crumb.href} className="hover:text-foreground transition-colors">
+                  <Link href={crumb.href} className="hover:text-foreground transition-colors truncate hidden sm:block">
                     {crumb.label}
                   </Link>
                 ) : (
-                  <span className="text-foreground font-medium">{crumb.label}</span>
+                  <span className="text-foreground font-medium truncate">{crumb.label}</span>
                 )}
                 {index < breadcrumbs.length - 1 && (
-                  <ChevronRight className="h-4 w-4" />
+                  <ChevronRight className="h-4 w-4 shrink-0 hidden sm:block" />
                 )}
               </div>
             ))}
+          </div>
+
+          {/* Mobile: dark mode toggle in header */}
+          <div className="md:hidden">
+            <ThemeToggleButton />
           </div>
         </header>
 
